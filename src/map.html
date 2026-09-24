@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031018">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="Explore verified New Hampshire treatment, recovery housing, medication, respite, and community resource locations.">
+  <title>Resource Map | The Process Recovery Center</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./map.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="./config.js"></script>
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script type="module" src="./map.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#map-results">Skip to locations</a>
+  <header class="topbar"><div class="shell topbar-inner">
+    <a class="wordmark" href="./" aria-label="The Process Recovery Center resource hub"><img src="./process-logo.png" alt="The Process Recovery Center" width="389" height="95"></a>
+    <nav class="topbar-nav" aria-label="Main navigation"><a href="./">Resources</a><a href="./map.html" aria-current="page">Explore map</a></nav>
+  </div></header>
+  <main>
+    <section class="map-intro"><div class="shell">
+      <p class="eyebrow">PROCESS CLIENT RESOURCE HUB</p>
+      <h1>Find support near you.</h1>
+      <p>Explore public program locations across New Hampshire. Choose a type or search by name or address. Contact each provider to confirm services, eligibility, and availability.</p>
+    </div></section>
+    <section class="map-workspace shell" aria-label="Explore resource locations">
+      <div class="map-tools">
+        <label class="map-search" for="map-search">Search locations <input id="map-search" type="search" placeholder="Name, town, or address" autocomplete="off"></label>
+        <div id="map-filters" class="map-filters" role="group" aria-label="Filter locations by type"></div>
+      </div>
+      <p class="map-status"><span id="map-count" aria-live="polite">Loading locations…</span><span id="map-feed-state">Saved resource list</span></p>
+      <div class="map-layout">
+        <div class="map-canvas-wrap"><div id="resource-map" aria-label="Map of resource locations"></div><p id="map-fallback" hidden>The map could not load. You can still use the location list and directions links.</p></div>
+        <div class="map-list" id="map-results" aria-label="Locations"></div>
+      </div>
+      <p class="map-privacy">The map does not ask for your location or store client information. Only public provider locations are shown.</p>
+    </section>
+  </main>
+  <footer><div class="shell footer-inner"><div><img class="footer-process-logo" src="./process-logo.png" alt="The Process Recovery Center" width="389" height="95"><p>Check program details with each provider. For changes to this directory, contact <a href="mailto:info@theprocessrecoverycenter.com">Process Recovery Center</a>.</p></div><img class="king-logo" src="./king-logo.png" alt="King Healthcare Group" width="1536" height="1024"></div></footer>
+</body>
+</html>

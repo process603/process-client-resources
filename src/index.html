@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031018">
+  <meta name="referrer" content="no-referrer">
+  <meta name="description" content="A simple starting point for New Hampshire housing, benefits, rides, documents, employment, and recovery resources.">
+  <title>Client Resource Hub | The Process Recovery Center</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./config.js"></script>
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#topics">Skip to resources</a>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="wordmark" href="./" aria-label="The Process Recovery Center resource hub"><img src="./process-logo.png" alt="The Process Recovery Center" width="389" height="95"></a>
+      <nav class="topbar-nav" aria-label="Main navigation"><a href="./" aria-current="page">Resources</a><a href="./map.html">Explore map</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="shell intro-inner">
+        <div class="intro-copy">
+          <p class="eyebrow">THE PROCESS RECOVERY CENTER · NEW HAMPSHIRE</p>
+          <h1>One place to find<br><span>your next step.</span></h1>
+          <p>Find housing applications, benefits, rides, documents, and recovery support. Choose a topic below or search for what you need.</p>
+          <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Search resources" aria-controls="resource-list"><kbd>/</kbd></label>
+        </div>
+        <aside class="intro-callout"><span class="callout-icon" aria-hidden="true">↗</span><p>Start here, then take it one step at a time.</p><small>If a link is missing or unclear, your case manager can help.</small></aside>
+      </div>
+    </section>
+
+    <section class="topics shell" id="topics" aria-labelledby="topics-heading">
+      <div class="section-title"><div><p class="eyebrow dark">EXPLORE BY TOPIC</p><h2 id="topics-heading">What do you need today?</h2></div><p>Tap a category to see the resources and simple instructions.</p></div>
+      <div class="topic-grid" id="category-grid" role="group" aria-label="Choose a resource category"></div>
+      <a class="map-promo" href="./map.html"><span><strong>Explore the New Hampshire resource map</strong><small>See treatment, sober living, medication, respite, and other locations.</small></span><span aria-hidden="true">View map ↗</span></a>
+    </section>
+
+    <section class="resources shell" id="resources" aria-labelledby="resources-heading">
+      <div class="section-title resource-title"><div><p class="eyebrow dark">THE RESOURCE LIST</p><h2 id="resources-heading">All resources</h2></div><p id="feed-state">Showing saved resource list</p></div>
+      <div class="resource-tools"><div id="audience-filters" class="audience-filters" role="group" aria-label="Filter housing by audience"></div><span id="result-count" aria-live="polite"></span></div>
+      <div id="resource-list" class="resource-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty" hidden><h3>No resources match</h3><p>Try another term or return to all topics.</p><button id="show-all" type="button">Show all resources</button></div>
+    </section>
+
+    <section class="help"><div class="shell help-inner"><div><p class="eyebrow">A PERSON CAN HELP</p><h2>Not sure where to start?</h2><p>Talk with your case manager. For food, housing, and everyday needs across New Hampshire, call 211.</p></div><a href="tel:211">Call 211 <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+  <footer><div class="shell footer-inner"><div><img class="footer-process-logo" src="./process-logo.png" alt="The Process Recovery Center" width="389" height="95"><p>This directory does not collect your personal information. Check program details with each provider.</p></div><img class="king-logo" src="./king-logo.png" alt="King Healthcare Group" width="1536" height="1024"></div></footer>
+</body>
+</html>
