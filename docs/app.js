@@ -37,6 +37,23 @@ function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
     mapType:['Programs','Sober Living','Medication','Respite','Other'].includes(input.mapType) ? input.mapType : '',
     address:text('address'), latitude:coordinate(input.latitude,-90,90), longitude:coordinate(input.longitude,-180,180) };
 }
+// Keep the existing Apps Script audience values compatible with the live feed.
+// An explicit unknown note prevents an unspecified audience from claiming both.
+function population(item) {
+  if (item.audience === 'Men') return 'Male';
+  if (item.audience === 'Women') return 'Female';
+  const declared = /(?:^|\s)Population: (Male|Female|Both|Not confirmed)\./i.exec(item.importantNotes || '');
+  return declared ? declared[1] : 'Both';
+}
+function matchesPopulation(item, selected) {
+  if (!selected || selected === 'All') return true;
+  const value = population(item);
+  return value === selected || (value === 'Both' && ['Male','Female'].includes(selected));
+}
+function approximateLocation(item) {
+  return /approximate (city|town)/i.test(item.importantNotes || '') ||
+    (!!item.address && !/\d/.test(item.address));
+}
 function stale(date) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return true;
   const time = Date.parse(date + 'T12:00:00Z');
@@ -72,10 +89,12 @@ function resourceCard(item) {
   const top = node('div','card-top');
   top.append(node('span','card-category',item.category));
   const badges = node('span','card-badges');
-  if (item.audience !== 'All') badges.append(node('span','badge',item.audience));
+  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(item.category)) badges.append(node('span','badge','Serves: ' + population(item)));
   if (stale(item.lastVerified)) badges.append(node('span','badge review','Check details'));
   top.append(badges);
-  card.append(top,node('h3','',item.title),node('p','description',item.description));
+  card.append(top,node('h3','',item.title));
+  if (item.address) card.append(node('p','resource-location',item.address));
+  card.append(node('p','description',item.description));
   const actions = node('div','card-actions');
   if (item.url) {
     const link = node('a','action-link',(item.buttonText || 'Open resource') + ' ↗');
@@ -103,8 +122,8 @@ function render() {
   const q = state.query.toLocaleLowerCase();
   const items = state.resources.filter(item =>
     (!state.category || item.category === state.category) &&
-    (state.audience === 'All' || item.category !== 'Housing & Sober Living' || item.audience === 'All' || item.audience === state.audience) &&
-    [item.title,item.description,item.category,item.howTo,item.importantNotes].join(' ').toLocaleLowerCase().includes(q)
+    matchesPopulation(item, state.audience) &&
+    [item.title,item.description,item.category,item.howTo,item.importantNotes,item.address].join(' ').toLocaleLowerCase().includes(q)
   ).sort(sortResources);
   $('#resource-list').replaceChildren(...items.map(resourceCard));
   $('#result-count').textContent = `${items.length} resource${items.length === 1?'':'s'}`;
@@ -116,8 +135,8 @@ function render() {
     button.setAttribute('aria-pressed',String(button.dataset.category === state.category));
   }
   const audience = $('#audience-filters'); audience.replaceChildren();
-  if (state.category === 'Housing & Sober Living') for (const value of ['All','Men','Women']) {
-    const button = node('button','',value === 'All'?'All housing':value);
+  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(state.category)) for (const value of ['All','Male','Female','Both','Not confirmed']) {
+    const button = node('button','',value === 'All'?'Everyone':value);
     button.type='button'; button.setAttribute('aria-pressed',String(value===state.audience));
     button.addEventListener('click',()=>{state.audience=value;render();});audience.append(button);
   }
@@ -176,4 +195,4 @@ async function init() {
   document.addEventListener('visibilitychange',()=>{ if (!document.hidden) refresh(); });
 }
 if (typeof document !== 'undefined' && document.querySelector('#category-grid')) init();
-export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed };
+export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, matchesPopulation, approximateLocation };

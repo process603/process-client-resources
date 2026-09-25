@@ -29,3 +29,13 @@ To replace the feed, open the Sheet's **Extensions → Apps Script**, paste `Cod
 Run `npm test` and `npm run build`. The build refreshes `dist/` and `docs/`. The static files in `dist/` use relative paths and work in a GitHub Pages project repository, such as `process603.github.io/process-client-resources/`. Configure Pages to deploy from `main` and `/docs`. Public publication was approved by the project owner.
 
 The owner-only Sites page is a temporary review preview. GitHub Pages is the intended final home. The site uses the supplied Process and King logo assets and the navy and bright blue palette from the Process staff card page.
+
+### Location and population editing
+
+- `Address` accepts a public street address or `City, State` for an approximate pin. Both coordinates are required. Never enter private housing addresses.
+- For town-level coordinates, start `Important Notes` with `Approximate city/town pin only; not the property location.` The site labels these pins and suppresses directions. City-only addresses are also treated as approximate.
+- `Audience`: `Men` displays **Male**, `Women` displays **Female**, and `All` displays **Both**. These values preserve compatibility with the deployed Apps Script.
+- If the population is unknown, choose `All` and add `Population: Not confirmed.` to `Important Notes`. This displays **Not confirmed** and excludes the listing from Male/Female/Both filters until checked. Remove that sentence once confirmed.
+- Male/Female filters include Both. Both may refer to separate homes; confirm the specific placement with the provider.
+- Use a separate row per city for multi-location providers. Identical coordinates share a numbered pin with every matching provider listed in its popup.
+- `Active` still controls publication. Adding coordinates does not activate drafts.

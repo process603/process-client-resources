@@ -51,3 +51,29 @@ test('the public Apps Script output excludes Staff Notes and inactive rows', () 
   assert.equal(result.categories[1].name,'Phone Assistance');
   assert.equal(JSON.stringify(result).includes('Private staff note'),false);
 });
+
+test('population filters include both, but never treat unknown as confirmed', async () => {
+  const {population,matchesPopulation,approximateLocation}=await import('../src/app.js');
+  const male={audience:'Men'}, female={audience:'Women'}, both={audience:'All',importantNotes:'Population: Both.'}, unknown={audience:'All',importantNotes:'Population: Not confirmed.'};
+  assert.equal(population(male),'Male');
+  assert.equal(population(female),'Female');
+  assert.equal(population(both),'Both');
+  assert.equal(population({audience:'All'}),'Both');
+  assert.equal(matchesPopulation(both,'Female'),true);
+  assert.equal(matchesPopulation(unknown,'Female'),false);
+  assert.equal(matchesPopulation(male,'Both'),false);
+  assert.equal(approximateLocation({address:'Nashua, NH'}),true);
+  assert.equal(approximateLocation({address:'45 High St, Nashua, NH'}),false);
+  assert.equal(approximateLocation({address:'45 High St, Nashua, NH',importantNotes:'Approximate city/town pin only.'}),true);
+});
+
+test('same-city providers stay accessible in a grouped marker after filtering', async () => {
+  const {groupLocations}=await import('../src/map.js');
+  const base={category:'Housing & Sober Living',mapType:'Sober Living',address:'Nashua, NH',latitude:42.749074,longitude:-71.490544};
+  const items=parseFeed({resources:[{...base,title:'Male home',audience:'Men'},{...base,title:'Female home',audience:'Women'},{...base,title:'Both homes',audience:'All',importantNotes:'Population: Both.'}]});
+  assert.equal(groupLocations(items).length,1);
+  assert.equal(groupLocations(items)[0].length,3);
+  const selected=filterLocations(items,'Sober Living','Nashua','Female');
+  assert.deepEqual(selected.map(x=>x.title),['Both homes','Female home']);
+  assert.equal(groupLocations(selected)[0].length,2);
+});
