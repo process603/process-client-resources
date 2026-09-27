@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, population, matchesPopulation, approximateLocation } from './app.js';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation } from './app.js';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Respite','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
 let map = null;
 let layer = null;
@@ -36,11 +36,11 @@ function element(tag, className, value) {
 }
 
 function directions(item) {
-  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(`${item.latitude},${item.longitude}`);
+  return 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(item.address);
 }
 
 function locationDetails(parent, item) {
-  parent.append(element('span','population-badge','Serves: ' + population(item)));
+  if (populationLabel(item)) parent.append(element('span','population-badge','Serves: ' + populationLabel(item)));
   if (approximateLocation(item)) {
     parent.append(element('p','approximate-note','Approximate city/town location. Contact the provider for the address before traveling.'));
   } else {
@@ -61,7 +61,7 @@ function card(item, marker) {
   if (item.description) article.append(element('p','',item.description));
   const address = element('address','',item.address);
   article.append(address);
-  article.append(element('span','population-badge','Serves: ' + population(item)));
+  if (populationLabel(item)) article.append(element('span','population-badge','Serves: ' + populationLabel(item)));
   if (approximateLocation(item)) article.append(element('p','approximate-note','Approximate city/town pin — not the property location. Contact the provider for the address.'));
   const actions = element('div','map-item-actions');
   if (marker) {

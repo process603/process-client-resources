@@ -14,9 +14,9 @@ Staff maintain the work-owned **Process Client Resource Hub TPRC** Google Sheet.
 
 ## Resource map
 
-`map.html` is a separate mobile-friendly page. It filters active, geocoded resources by Programs, Sober Living, Medication, Respite, or Other, and shows a matching list with directions, website, and phone links. A pin needs a public provider address, map type, latitude, and longitude. The map never requests a visitor's location. Leaflet uses OpenStreetMap tiles with visible attribution; the list remains usable if map tiles cannot load. The saved preview begins with The Process Recovery Center location, verified from its official contact page on September 24, 2026.
+`map.html` is a separate mobile-friendly page. It filters active, geocoded resources by Programs, Sober Living, Medication, Doorways, or Other, and shows a matching list with directions, website, and phone links. A pin needs a public provider address, map type, latitude, and longitude. The map never requests a visitor's location. Leaflet uses OpenStreetMap tiles with visible attribution; the list remains usable if map tiles cannot load. The saved preview begins with The Process Recovery Center location, verified from its official contact page on September 24, 2026.
 
-The Rise Above respondent form link was supplied by Kevin and checked on September 23, 2026. The page shows a staff-help message for missing links and a review badge when verification is missing or older than 180 days. The six NH court PDFs, duplicate DMV form, and BFA 800 remain marked for a staff browser check because automated access to these government PDFs returned 403; their titles came from official government listings.
+The Rise Above respondent form link was supplied by Kevin and checked on September 23, 2026. The page shows a staff-help message for missing links while review dates and reminders stay in the staff sheet. The six NH court PDFs, duplicate DMV form, and BFA 800 remain marked for a staff browser check because automated access to these government PDFs returned 403; their titles came from official government listings.
 
 ## Public data feed
 
@@ -35,7 +35,13 @@ The owner-only Sites page is a temporary review preview. GitHub Pages is the int
 - `Address` accepts a public street address or `City, State` for an approximate pin. Both coordinates are required. Never enter private housing addresses.
 - For town-level coordinates, start `Important Notes` with `Approximate city/town pin only; not the property location.` The site labels these pins and suppresses directions. City-only addresses are also treated as approximate.
 - `Audience`: `Men` displays **Male**, `Women` displays **Female**, and `All` displays **Both**. These values preserve compatibility with the deployed Apps Script.
-- If the population is unknown, choose `All` and add `Population: Not confirmed.` to `Important Notes`. This displays **Not confirmed** and excludes the listing from Male/Female/Both filters until checked. Remove that sentence once confirmed.
+- If the population is unknown, choose `All` and add `Population: Not confirmed.` to `Important Notes`. This hides the population badge and excludes the listing from Male/Female/Both filters until checked. Remove that sentence once confirmed.
 - Male/Female filters include Both. Both may refer to separate homes; confirm the specific placement with the provider.
 - Use a separate row per city for multi-location providers. Identical coordinates share a numbered pin with every matching provider listed in its popup.
 - `Active` still controls publication. Adding coordinates does not activate drafts.
+
+### Public notes and Doorways
+
+Keep review reminders and source history in **Staff Notes**, which is excluded from the public feed. **Important Notes** is for client guidance; the population control marker is not displayed. Last Verified remains available for staff review without a public warning badge.
+
+Use **Doorways** for NH public Doorway access points. Do not enter respite facility addresses or coordinates. Legacy Respite map types are not accepted by the website. Directions use the public street address, including suite information.

@@ -31,11 +31,12 @@ function coordinate(value, minimum, maximum) {
 function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
   if (!input || !allowed.includes(input.category) || !String(input.title || '').trim() || input.active === false) return null;
   const text = key => String(input[key] ?? '').trim();
+  const privateLocation = input.mapType === 'Respite';
   return { category:text('category'), title:text('title'), description:text('description'), buttonText:text('buttonText'),
     url:safeHttpUrl(input.url), phone:text('phone'), howTo:text('howTo'), audience:['All','Men','Women'].includes(input.audience)?input.audience:'All',
     featured:input.featured === true, sortOrder:Number(input.sortOrder) || 999, lastVerified:text('lastVerified'), importantNotes:text('importantNotes'),
-    mapType:['Programs','Sober Living','Medication','Respite','Other'].includes(input.mapType) ? input.mapType : '',
-    address:text('address'), latitude:coordinate(input.latitude,-90,90), longitude:coordinate(input.longitude,-180,180) };
+    mapType:['Programs','Sober Living','Medication','Doorways','Other'].includes(input.mapType) ? input.mapType : '',
+    address:privateLocation ? '' : text('address'), latitude:privateLocation ? null : coordinate(input.latitude,-90,90), longitude:privateLocation ? null : coordinate(input.longitude,-180,180) };
 }
 // Keep the existing Apps Script audience values compatible with the live feed.
 // An explicit unknown note prevents an unspecified audience from claiming both.
@@ -44,6 +45,17 @@ function population(item) {
   if (item.audience === 'Women') return 'Female';
   const declared = /(?:^|\s)Population: (Male|Female|Both|Not confirmed)\./i.exec(item.importantNotes || '');
   return declared ? declared[1] : 'Both';
+}
+function populationLabel(item) {
+  const value = population(item);
+  return value.toLowerCase() === 'not confirmed' ? '' : value;
+}
+function publicNotes(item) {
+  return String(item.importantNotes || '')
+    .replace(/(?:^|\s)Population: (?:Male|Female|Both|Not confirmed)\./gi, ' ')
+    .replace(/Eligibility is based on the staff tracker; confirm placement and current openings with the provider\./g, '')
+    .replace(/Contact the provider to confirm which homes fit your needs\./g, '')
+    .replace(/\s+/g, ' ').trim();
 }
 function matchesPopulation(item, selected) {
   if (!selected || selected === 'All') return true;
@@ -89,8 +101,7 @@ function resourceCard(item) {
   const top = node('div','card-top');
   top.append(node('span','card-category',item.category));
   const badges = node('span','card-badges');
-  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(item.category)) badges.append(node('span','badge','Serves: ' + population(item)));
-  if (stale(item.lastVerified)) badges.append(node('span','badge review','Check details'));
+  if (populationLabel(item) && ['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(item.category)) badges.append(node('span','badge','Serves: ' + populationLabel(item)));
   top.append(badges);
   card.append(top,node('h3','',item.title));
   if (item.address) card.append(node('p','resource-location',item.address));
@@ -104,14 +115,14 @@ function resourceCard(item) {
   const phone = safePhone(item.phone);
   if (phone) { const call = node('a','call-link','Call ' + item.phone); call.href = phone; actions.append(call); }
   card.append(actions);
-  if (item.howTo || item.importantNotes) {
+  const notes = publicNotes(item);
+  if (item.howTo || notes) {
     const details = node('details','card-detail');
     details.append(node('summary','','How do I do this?'));
     if (item.howTo) details.append(node('p','',item.howTo));
-    if (item.importantNotes) details.append(node('p','important',item.importantNotes));
+    if (notes) details.append(node('p','important',notes));
     card.append(details);
   }
-  if (item.lastVerified) card.append(node('span','card-foot','Checked ' + item.lastVerified));
   return card;
 }
 function sortResources(a,b) {
@@ -123,7 +134,7 @@ function render() {
   const items = state.resources.filter(item =>
     (!state.category || item.category === state.category) &&
     matchesPopulation(item, state.audience) &&
-    [item.title,item.description,item.category,item.howTo,item.importantNotes,item.address].join(' ').toLocaleLowerCase().includes(q)
+    [item.title,item.description,item.category,item.howTo,publicNotes(item),item.address].join(' ').toLocaleLowerCase().includes(q)
   ).sort(sortResources);
   $('#resource-list').replaceChildren(...items.map(resourceCard));
   $('#result-count').textContent = `${items.length} resource${items.length === 1?'':'s'}`;
@@ -135,7 +146,7 @@ function render() {
     button.setAttribute('aria-pressed',String(button.dataset.category === state.category));
   }
   const audience = $('#audience-filters'); audience.replaceChildren();
-  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(state.category)) for (const value of ['All','Male','Female','Both','Not confirmed']) {
+  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(state.category)) for (const value of ['All','Male','Female','Both']) {
     const button = node('button','',value === 'All'?'Everyone':value);
     button.type='button'; button.setAttribute('aria-pressed',String(value===state.audience));
     button.addEventListener('click',()=>{state.audience=value;render();});audience.append(button);
@@ -195,4 +206,4 @@ async function init() {
   document.addEventListener('visibilitychange',()=>{ if (!document.hidden) refresh(); });
 }
 if (typeof document !== 'undefined' && document.querySelector('#category-grid')) init();
-export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, matchesPopulation, approximateLocation };
+export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, populationLabel, publicNotes, matchesPopulation, approximateLocation };

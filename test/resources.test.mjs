@@ -5,6 +5,24 @@ import test from 'node:test';
 import { normalize, safeHttpUrl, stale, parseFeed, sortResources, categoryList } from '../src/app.js';
 import { mappable, filterLocations } from '../src/map.js';
 
+test('Doorways map normally while legacy respite locations stay hidden', () => {
+  const base={category:'Recovery Resources',title:'Access point',address:'268 Main St, Nashua, NH',latitude:42.755024,longitude:-71.462585};
+  const resources=parseFeed({resources:[{...base,mapType:'Doorways'},{...base,title:'Legacy private location',mapType:'Respite'}]});
+  assert.equal(filterLocations(resources,'Doorways','Nashua').length,1);
+  assert.equal(mappable(resources).length,1);
+  assert.equal(resources[1].address,'');
+  assert.equal(resources[1].latitude,null);
+});
+
+test('public notes preserve client guidance without staff review metadata', async () => {
+  const {publicNotes,populationLabel,matchesPopulation}=await import('../src/app.js');
+  const item={audience:'All',importantNotes:'Population: Not confirmed. Eligibility is based on the staff tracker; confirm placement and current openings with the provider. Approximate city/town pin only; not the property location. Call 911 for immediate danger.'};
+  assert.equal(publicNotes(item),'Approximate city/town pin only; not the property location. Call 911 for immediate danger.');
+  assert.equal(populationLabel(item),'');
+  assert.equal(matchesPopulation(item,'Female'),false);
+  assert.equal(matchesPopulation(item,'All'),true);
+});
+
 test('the client parser rejects unsafe links and inactive rows', () => {
   assert.equal(safeHttpUrl('javascript:alert(1)'), '');
   assert.equal(safeHttpUrl('http://example.com'), '');
