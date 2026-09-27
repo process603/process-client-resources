@@ -1,4 +1,4 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation } from './app.js';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation } from './app.js?v=20260927';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
