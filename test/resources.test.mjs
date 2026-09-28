@@ -21,13 +21,25 @@ test('care guides and map filters keep therapy, primary care, and medication dis
   const snapshot=JSON.parse(readFileSync(new URL('../src/resources.json',import.meta.url),'utf8'));
   const resources=parseFeed({resources:snapshot});
   assert.equal(careResources(resources,'Primary Care').length,4);
-  assert.equal(careResources(resources,'Therapy & Counseling').length,3);
+  assert.equal(careResources(resources,'Therapy & Counseling').length,5);
   assert.equal(filterLocations(resources,'Primary Care','').length,2);
-  assert.equal(filterLocations(resources,'Therapy','').length,1);
+  assert.equal(filterLocations(resources,'Therapy','').length,2);
   assert.equal(guideFor('therapy').category,'Therapy & Counseling');
   assert.equal(guideFor('invalid').category,'Primary Care');
   assert.ok(careResources(resources,'Therapy & Counseling').some(r=>r.title.includes('Greater Nashua')&&r.latitude===null));
   assert.equal(resources.some(r=>'source' in r||'staffNotes' in r),false);
+});
+
+test('Spidaliere appears in both relevant map filters and employment contacts remain distinct', () => {
+  const resources=parseFeed({resources:JSON.parse(readFileSync(new URL('../src/resources.json',import.meta.url),'utf8'))});
+  const therapy=filterLocations(resources,'Therapy','Spidaliere');
+  const meds=filterLocations(resources,'Medication','Spidaliere');
+  assert.equal(therapy.length,1);
+  assert.equal(meds.length,1);
+  assert.equal(therapy[0].latitude,meds[0].latitude);
+  assert.equal(therapy[0].longitude,meds[0].longitude);
+  assert.equal(resources.filter(x=>x.category==='Employment'&&x.title.startsWith('WorkPath')).length,2);
+  assert.equal(resources.find(x=>x.title.startsWith('Psychology Today')).mapType,'');
 });
 
 test('shelter and pantry layers survive feed parsing and remain separate at shared addresses', () => {
