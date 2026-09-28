@@ -5,14 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#031018">
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  <meta name="description" content="Explore New Hampshire treatment, recovery housing, medication, Doorway, and community resource locations.">
+  <meta name="description" content="Find New Hampshire treatment, shelters, food pantries, meal sites, recovery housing, and Doorways. View access instructions and print a local resource list.">
   <title>Resource Map | The Process Recovery Center</title>
-  <link rel="stylesheet" href="./styles.css?v=20260927">
-  <link rel="stylesheet" href="./map.css?v=20260927">
+  <link rel="stylesheet" href="./styles.css?v=20260928">
+  <link rel="stylesheet" href="./map.css?v=20260928">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="./config.js"></script>
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script type="module" src="./map.js?v=20260927"></script>
+  <script type="module" src="./map.js?v=20260928"></script>
 </head>
 <body>
   <a class="skip-link" href="#map-results">Skip to locations</a>
@@ -24,7 +24,7 @@
     <section class="map-intro"><div class="shell">
       <p class="eyebrow">PROCESS CLIENT RESOURCE HUB</p>
       <h1>Find support near you.</h1>
-      <p>Explore treatment and recovery resources in New Hampshire and nearby communities. Filter by service or population, or search by town. City/town pins are approximate; contact providers for addresses, eligibility, and openings.</p>
+      <p>Find treatment, shelter, food, and recovery support in New Hampshire and nearby communities. Filter by service or population, or search by town. Check each listing for access instructions, hours, and eligibility.</p>
     </div></section>
     <section class="map-workspace shell" aria-label="Explore resource locations">
       <div class="map-tools">
@@ -32,7 +32,9 @@
         <div id="map-filters" class="map-filters" role="group" aria-label="Filter locations by type"></div>
       </div>
       <div class="population-tools"><label for="map-population">Population served <select id="map-population"><option value="All">Everyone</option><option>Male</option><option>Female</option><option>Both</option></select></label><p>Male and Female include providers serving both. “Both” may mean separate homes. Numbered pins contain multiple resources.</p></div>
-      <p class="map-status"><span id="map-count" aria-live="polite">Loading locations…</span><span id="map-feed-state">Saved resource list</span></p>
+      <div id="map-context" class="map-context" hidden></div>
+      <div class="map-status"><span id="map-count" aria-live="polite">Loading locations…</span><span id="map-feed-state">Saved resource list</span><button id="print-list" type="button">Print this list</button></div>
+      <p id="print-summary" class="print-only"></p>
       <div class="map-layout">
         <div class="map-canvas-wrap"><div id="resource-map" aria-label="Map of resource locations"></div><p id="map-fallback" hidden>The map could not load. You can still use the location list and directions links.</p></div>
         <div class="map-list" id="map-results" aria-label="Locations"></div>

@@ -5,6 +5,19 @@ import test from 'node:test';
 import { normalize, safeHttpUrl, stale, parseFeed, sortResources, categoryList } from '../src/app.js';
 import { mappable, filterLocations } from '../src/map.js';
 
+test('shelter and pantry layers survive feed parsing and remain separate at shared addresses', () => {
+  const location={address:'2 Quincy Street, Nashua, NH',latitude:42.76,longitude:-71.46,audience:'All'};
+  const resources=parseFeed({resources:[
+    {...location,category:'Shelters',mapType:'Shelters',title:'Shelter access',howTo:'Call 211 before traveling.'},
+    {...location,category:'Food Pantries',mapType:'Food Pantries',title:'Pantry',importantNotes:'Hours: Tuesday 6–7 PM.'},
+    {...location,category:'Food Pantries',mapType:'Food Pantries',title:'Hidden pantry',active:false}
+  ]});
+  assert.equal(mappable(resources).length,2);
+  assert.deepEqual(filterLocations(resources,'Food Pantries','Nashua').map(x=>x.title),['Pantry']);
+  assert.deepEqual(filterLocations(resources,'Shelters','').map(x=>x.title),['Shelter access']);
+  assert.equal(resources[1].importantNotes,'Hours: Tuesday 6–7 PM.');
+});
+
 test('Doorways map normally while legacy respite locations stay hidden', () => {
   const base={category:'Recovery Resources',title:'Access point',address:'268 Main St, Nashua, NH',latitude:42.755024,longitude:-71.462585};
   const resources=parseFeed({resources:[{...base,mapType:'Doorways'},{...base,title:'Legacy private location',mapType:'Respite'}]});

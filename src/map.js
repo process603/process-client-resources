@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation } from './app.js?v=20260927';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes } from './app.js?v=20260928';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
 let map = null;
 let layer = null;
@@ -61,6 +61,9 @@ function card(item, marker) {
   if (item.description) article.append(element('p','',item.description));
   const address = element('address','',item.address);
   article.append(address);
+  if (item.howTo) article.append(element('p','access-details',item.howTo));
+  if (publicNotes(item) && !approximateLocation(item)) article.append(element('p','service-notes',publicNotes(item)));
+  if (item.lastVerified) article.append(element('p','verified-date','Details checked: '+item.lastVerified));
   if (populationLabel(item)) article.append(element('span','population-badge','Serves: ' + populationLabel(item)));
   if (approximateLocation(item)) article.append(element('p','approximate-note','Approximate city/town pin — not the property location. Contact the provider for the address.'));
   const actions = element('div','map-item-actions');
@@ -93,6 +96,10 @@ function markerFor(items) {
     const entry = element('section','popup-entry');
     entry.append(element('strong','',resource.title),element('span','',resource.address));
     locationDetails(entry,resource);
+    if (resource.howTo) entry.append(element('p','access-details',resource.howTo));
+    if (publicNotes(resource) && !approximateLocation(resource)) entry.append(element('p','service-notes',publicNotes(resource)));
+    const phone=safePhone(resource.phone);
+    if (phone) addLink(entry,'Call '+resource.phone,phone);
     if (resource.url) addLink(entry,'Provider website ↗',resource.url);
     popup.append(entry);
   }
@@ -106,6 +113,18 @@ function render() {
   const list = document.querySelector('#map-results');
   const count = document.querySelector('#map-count');
   count.textContent = `${items.length} location${items.length===1?'':'s'} shown`;
+  const context=document.querySelector('#map-context');
+  context.replaceChildren();
+  if (state.type==='Shelters') {
+    context.append(element('p','','Call before traveling: a pin does not mean a bed is available. Some pins mark intake or resource offices; check the access instructions.'));
+    addLink(context,'Call 211 for shelter referrals','tel:211');
+  } else if (state.type==='Food Pantries') {
+    context.append(element('p','','Pantries and meal sites have different schedules and eligibility rules. Hours below are published schedules, not live opening status. Check for holiday or weather changes.'));
+    addLink(context,'NH Food Bank: find more food','https://nhfoodbank.org/find-food/food-map/');
+    addLink(context,'Mobile pantry schedule','https://nhfoodbank.org/find-food/mobile-food-pantry-schedule/');
+  }
+  context.hidden=!context.childNodes.length;
+  document.querySelector('#print-summary').textContent=[state.type==='All'?'All resource locations':state.type,state.query?`Search: ${state.query}`:'',state.population!=='All'?`Population: ${state.population}`:'',`${items.length} locations`].filter(Boolean).join(' · ');
   if (layer) layer.clearLayers();
   const bounds=[];
   const markers = new Map();
@@ -139,11 +158,14 @@ function setupMap() {
 
 async function init() {
   setupMap();
+  const initialType=new URLSearchParams(window.location.search).get('type');
+  if (TYPES.includes(initialType)) state.type=initialType;
+  document.querySelector('#print-list').addEventListener('click',()=>window.print());
   const filters=document.querySelector('#map-filters');
   for (const type of TYPES) {
     const button=element('button','',type);
     button.type='button';button.dataset.type=type;
-    button.addEventListener('click',()=>{state.type=type;render();});
+    button.addEventListener('click',()=>{state.type=type;const url=new URL(window.location.href);if(type==='All')url.searchParams.delete('type');else url.searchParams.set('type',type);window.history.replaceState(null,'',url);render();});
     filters.append(button);
   }
   document.querySelector('#map-search').addEventListener('input',event=>{state.query=event.target.value;render();});

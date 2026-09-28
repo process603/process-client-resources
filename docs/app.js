@@ -1,5 +1,6 @@
 const CATEGORIES = [
   { name: 'Housing & Sober Living', icon: '⌂', description: 'Homes & applications' },
+  { name: 'Shelters', icon: '⌂', description: 'Shelter & housing access' },
   { name: 'Treatment Programs', icon: '✳', description: 'Care across New Hampshire' },
   { name: 'Benefits & NHEASY', icon: '▤', description: 'Coverage & assistance' },
   { name: 'Phone Assistance', icon: '☎', description: 'Phone applications' },
@@ -10,7 +11,8 @@ const CATEGORIES = [
   { name: 'Legal & Court Forms', icon: '§', description: 'Forms & filing steps' },
   { name: 'Employment', icon: '▥', description: 'Jobs & support' },
   { name: 'Recovery Resources', icon: '♡', description: 'Meetings & help' },
-  { name: 'Food & Financial Assistance', icon: '◒', description: 'Food & daily needs' }
+  { name: 'Food & Financial Assistance', icon: '◒', description: 'Food & daily needs' },
+  { name: 'Food Pantries', icon: '◒', description: 'Groceries, meals & hours' }
 ];
 const state = { resources: [], categories: CATEGORIES, category: '', audience: 'All', query: '' };
 const $ = selector => document.querySelector(selector);
@@ -35,7 +37,7 @@ function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
   return { category:text('category'), title:text('title'), description:text('description'), buttonText:text('buttonText'),
     url:safeHttpUrl(input.url), phone:text('phone'), howTo:text('howTo'), audience:['All','Men','Women'].includes(input.audience)?input.audience:'All',
     featured:input.featured === true, sortOrder:Number(input.sortOrder) || 999, lastVerified:text('lastVerified'), importantNotes:text('importantNotes'),
-    mapType:['Programs','Sober Living','Medication','Doorways','Other'].includes(input.mapType) ? input.mapType : '',
+    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Other'].includes(input.mapType) ? input.mapType : '',
     address:privateLocation ? '' : text('address'), latitude:privateLocation ? null : coordinate(input.latitude,-90,90), longitude:privateLocation ? null : coordinate(input.longitude,-180,180) };
 }
 // Keep the existing Apps Script audience values compatible with the live feed.
