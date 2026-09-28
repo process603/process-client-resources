@@ -2,6 +2,8 @@ const CATEGORIES = [
   { name: 'Housing & Sober Living', icon: '⌂', description: 'Homes & applications' },
   { name: 'Shelters', icon: '⌂', description: 'Shelter & housing access' },
   { name: 'Treatment Programs', icon: '✳', description: 'Care across New Hampshire' },
+  { name: 'Primary Care', icon: '✚', description: 'Find a doctor & get started' },
+  { name: 'Therapy & Counseling', icon: '♡', description: 'Find support & arrange intake' },
   { name: 'Benefits & NHEASY', icon: '▤', description: 'Coverage & assistance' },
   { name: 'Phone Assistance', icon: '☎', description: 'Phone applications' },
   { name: 'Medical Transportation', icon: '↗', description: 'Plan ride numbers' },
@@ -14,7 +16,21 @@ const CATEGORIES = [
   { name: 'Food & Financial Assistance', icon: '◒', description: 'Food & daily needs' },
   { name: 'Food Pantries', icon: '◒', description: 'Groceries, meals & hours' }
 ];
-const state = { resources: [], categories: CATEGORIES, category: '', audience: 'All', query: '' };
+const CATEGORY_GROUPS = [
+  {name:'Housing & Basic Needs', categories:['Housing & Sober Living','Shelters','Food Pantries','Food & Financial Assistance']},
+  {name:'Health & Treatment', categories:['Primary Care','Therapy & Counseling','Treatment Programs','Medication Providers']},
+  {name:'Benefits & Access', categories:['Benefits & NHEASY','Health Insurance','Medical Transportation','Phone Assistance']},
+  {name:'Documents, Work & Legal', categories:['IDs & Documents','Employment','Legal & Court Forms']},
+  {name:'Recovery & Support', categories:['Recovery Resources']}
+];
+function groupedCategories(categories) {
+  const groups=CATEGORY_GROUPS.map(group=>({...group,categories:group.categories.map(name=>categories.find(c=>c.name===name)).filter(Boolean)}));
+  const known=new Set(CATEGORY_GROUPS.flatMap(group=>group.categories));
+  const extra=categories.filter(category=>!known.has(category.name));
+  if(extra.length) groups.push({name:'More Resources',categories:extra});
+  return groups.filter(group=>group.categories.length);
+}
+const state = { resources: [], categories: CATEGORIES, category: '', audience: 'All', query: '', showAll:false };
 const $ = selector => document.querySelector(selector);
 
 function safeHttpUrl(value) {
@@ -37,7 +53,7 @@ function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
   return { category:text('category'), title:text('title'), description:text('description'), buttonText:text('buttonText'),
     url:safeHttpUrl(input.url), phone:text('phone'), howTo:text('howTo'), audience:['All','Men','Women'].includes(input.audience)?input.audience:'All',
     featured:input.featured === true, sortOrder:Number(input.sortOrder) || 999, lastVerified:text('lastVerified'), importantNotes:text('importantNotes'),
-    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Other'].includes(input.mapType) ? input.mapType : '',
+    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'].includes(input.mapType) ? input.mapType : '',
     address:privateLocation ? '' : text('address'), latitude:privateLocation ? null : coordinate(input.latitude,-90,90), longitude:privateLocation ? null : coordinate(input.longitude,-180,180) };
 }
 // Keep the existing Apps Script audience values compatible with the live feed.
@@ -138,9 +154,15 @@ function render() {
     matchesPopulation(item, state.audience) &&
     [item.title,item.description,item.category,item.howTo,publicNotes(item),item.address].join(' ').toLocaleLowerCase().includes(q)
   ).sort(sortResources);
-  $('#resource-list').replaceChildren(...items.map(resourceCard));
-  $('#result-count').textContent = `${items.length} resource${items.length === 1?'':'s'}`;
-  $('#resources-heading').textContent = state.category || (state.query ? 'Search results' : 'All resources');
+  const preview=!state.category&&!state.query&&!state.showAll;
+  const startingCategories=['Housing & Sober Living','Shelters','Food Pantries','Primary Care','Therapy & Counseling','Benefits & NHEASY','Treatment Programs','Recovery Resources'];
+  const displayed=preview?startingCategories.map(category=>items.find(item=>item.category===category)).filter(Boolean):items;
+  $('#resource-list').replaceChildren(...displayed.map(resourceCard));
+  $('#browse-all').hidden=!preview;
+  $('#category-guide').hidden=!['Primary Care','Therapy & Counseling'].includes(state.category);
+  $('#category-guide').href=state.category==='Primary Care'?'./care.html?type=primary-care':'./care.html?type=therapy';
+  $('#result-count').textContent = preview?`${displayed.length} starting points · ${items.length} resources available`:`${items.length} resource${items.length === 1?'':'s'}`;
+  $('#resources-heading').textContent = state.category || (state.query ? 'Search results' : preview?'Useful starting points':'All resources');
   $('#empty-state').hidden = items.length !== 0;
   $('#empty-state h3').textContent = state.category && !state.query ? 'No listings here yet' : 'No resources match';
   $('#empty-state p').textContent = state.category && !state.query ? 'Ask your case manager for help while this category grows.' : 'Try another term or return to all topics.';
@@ -155,15 +177,28 @@ function render() {
   }
 }
 function renderCategoryButtons() {
-  const grid=$('#category-grid'); grid.replaceChildren();
-  for (const category of state.categories) {
+  const grid=$('#category-grid');
+  const openGroups=new Set([...grid.querySelectorAll('details[open]')].map(group=>group.dataset.group));
+  grid.replaceChildren();
+  const all=node('button','browse-button','Browse all resources');all.type='button';
+  all.addEventListener('click',()=>showAllResources());grid.append(all);
+  for(const group of groupedCategories(state.categories)) {
+    const section=node('details','topic-section');section.dataset.group=group.name;
+    section.open=openGroups.has(group.name)||group.categories.some(c=>c.name===state.category);
+    const summary=node('summary');summary.append(node('strong','',group.name),node('small','',group.categories.map(c=>c.name).join(' · ')));
+    const topics=node('div','topic-grid');section.append(summary,topics);grid.append(section);
+    for (const category of group.categories) {
     const button=node('button','topic');button.type='button';button.dataset.category=category.name;
     const icon=node('span','topic-icon',category.icon), bottom=node('span','topic-bottom'), names=node('span');
     names.append(node('strong','',category.name),node('small','',category.description));
     bottom.append(names,node('span','topic-arrow','↗'));button.append(icon,bottom);
     button.addEventListener('click',()=>{state.category=state.category===category.name?'':category.name;state.audience='All';state.query='';$('#search').value='';render();$('#resources').scrollIntoView({behavior:'smooth'});});
-    grid.append(button);
+    topics.append(button);
+    }
   }
+}
+function showAllResources() {
+  state.category='';state.audience='All';state.query='';state.showAll=true;$('#search').value='';render();$('#resources').scrollIntoView({behavior:'smooth'});
 }
 function loadPublicFeed(url, timeoutMs=8000) {
   return new Promise((resolve,reject)=>{
@@ -179,9 +214,12 @@ function loadPublicFeed(url, timeoutMs=8000) {
   });
 }
 async function init() {
+  const requested=new URLSearchParams(location.search).get('category');
+  if(requested) state.category=requested;
   renderCategoryButtons();
+  $('#browse-all').addEventListener('click',showAllResources);
   $('#search').addEventListener('input',event=>{state.query=event.target.value.trim();state.category='';state.audience='All';render();});
-  $('#show-all').addEventListener('click',()=>{state.category='';state.audience='All';state.query='';$('#search').value='';render();$('#search').focus();});
+  $('#show-all').addEventListener('click',showAllResources);
   document.addEventListener('keydown',event=>{if(event.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName)){event.preventDefault();$('#search').focus();}});
   try { const response=await fetch('./resources.json',{cache:'no-store'}); if(!response.ok)throw new Error('Snapshot unavailable');state.resources=parseFeed({resources:await response.json()}); }
   catch { state.resources=[]; }
@@ -208,4 +246,4 @@ async function init() {
   document.addEventListener('visibilitychange',()=>{ if (!document.hidden) refresh(); });
 }
 if (typeof document !== 'undefined' && document.querySelector('#category-grid')) init();
-export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, populationLabel, publicNotes, matchesPopulation, approximateLocation };
+export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, populationLabel, publicNotes, matchesPopulation, approximateLocation, groupedCategories, resourceCard };

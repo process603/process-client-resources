@@ -4,6 +4,31 @@ import { runInNewContext } from 'node:vm';
 import test from 'node:test';
 import { normalize, safeHttpUrl, stale, parseFeed, sortResources, categoryList } from '../src/app.js';
 import { mappable, filterLocations } from '../src/map.js';
+import { groupedCategories } from '../src/app.js';
+import { guideFor, careResources } from '../src/care.js';
+
+test('homepage grouping covers every category once, including new staff categories', () => {
+  const categories=[...categoryList({}),{name:'Future Resource',description:'New'}];
+  const groups=groupedCategories(categories);
+  const names=groups.flatMap(g=>g.categories.map(c=>c.name));
+  assert.equal(new Set(names).size,categories.length);
+  assert.equal(names.length,categories.length);
+  assert.equal(groups.find(g=>g.name==='Health & Treatment').categories.length,4);
+  assert.equal(groups.at(-1).name,'More Resources');
+});
+
+test('care guides and map filters keep therapy, primary care, and medication distinct', () => {
+  const snapshot=JSON.parse(readFileSync(new URL('../src/resources.json',import.meta.url),'utf8'));
+  const resources=parseFeed({resources:snapshot});
+  assert.equal(careResources(resources,'Primary Care').length,4);
+  assert.equal(careResources(resources,'Therapy & Counseling').length,3);
+  assert.equal(filterLocations(resources,'Primary Care','').length,2);
+  assert.equal(filterLocations(resources,'Therapy','').length,1);
+  assert.equal(guideFor('therapy').category,'Therapy & Counseling');
+  assert.equal(guideFor('invalid').category,'Primary Care');
+  assert.ok(careResources(resources,'Therapy & Counseling').some(r=>r.title.includes('Greater Nashua')&&r.latitude===null));
+  assert.equal(resources.some(r=>'source' in r||'staffNotes' in r),false);
+});
 
 test('shelter and pantry layers survive feed parsing and remain separate at shared addresses', () => {
   const location={address:'2 Quincy Street, Nashua, NH',latitude:42.76,longitude:-71.46,audience:'All'};

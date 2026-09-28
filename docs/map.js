@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes } from './app.js?v=20260928';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes } from './app.js?v=20260928-care';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
 let map = null;
 let layer = null;
@@ -122,6 +122,10 @@ function render() {
     context.append(element('p','','Pantries and meal sites have different schedules and eligibility rules. Hours below are published schedules, not live opening status. Check for holiday or weather changes.'));
     addLink(context,'NH Food Bank: find more food','https://nhfoodbank.org/find-food/food-map/');
     addLink(context,'Mobile pantry schedule','https://nhfoodbank.org/find-food/mobile-food-pantry-schedule/');
+  }
+  if (['Primary Care','Therapy'].includes(state.type)) {
+    context.append(element('p','','These pins show public practices and intake locations, not live appointment availability. Confirm your exact insurance plan, age eligibility, location, and intake requirements before visiting.'));
+    addLink(context,'How to arrange care',state.type==='Primary Care'?'./care.html?type=primary-care':'./care.html?type=therapy');
   }
   context.hidden=!context.childNodes.length;
   document.querySelector('#print-summary').textContent=[state.type==='All'?'All resource locations':state.type,state.query?`Search: ${state.query}`:'',state.population!=='All'?`Population: ${state.population}`:'',`${items.length} locations`].filter(Boolean).join(' · ');
