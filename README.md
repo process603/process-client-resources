@@ -1,6 +1,6 @@
-# Process Client Resource Hub
+# Recovery Resource Hub
 
-Mobile-first client resource site for The Process Recovery Center. The site has no forms, analytics, cookies, or client-data storage.
+Mobile-first recovery resource site for The Process Recovery Center. The site has no forms, analytics, cookies, or client-data storage.
 
 ## Staff source
 

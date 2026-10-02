@@ -1,4 +1,4 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-referrals';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-recovery';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };

@@ -1,4 +1,4 @@
-import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-referrals';
+import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-recovery';
 
 const GUIDES={
   'primary-care':{
@@ -23,7 +23,7 @@ export function careResources(resources,category) {return resources.filter(item=
 async function init() {
   const therapy=new URLSearchParams(location.search).get('type')==='therapy';
   const guide=guideFor(therapy?'therapy':'primary-care');
-  document.title=guide.title+' | The Process Recovery Center';
+  document.title=guide.title+' | Recovery Resource Hub';
   document.querySelector('#care-title').textContent=guide.title;
   document.querySelector('#care-description').textContent=guide.description;
   document.querySelector(therapy?'#therapy-tab':'#primary-tab').setAttribute('aria-current','page');
