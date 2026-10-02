@@ -45,3 +45,11 @@ The owner-only Sites page is a temporary review preview. GitHub Pages is the int
 Keep review reminders and source history in **Staff Notes**, which is excluded from the public feed. **Important Notes** is for client guidance; the population control marker is not displayed. Last Verified remains available for staff review without a public warning badge.
 
 Use **Doorways** for NH public Doorway access points. Do not enter respite facility addresses or coordinates. Legacy Respite map types are not accepted by the website. Directions use the public street address, including suite information.
+
+## Referral details and handouts (October 2026)
+
+Resources columns S–V are **Services Offered**, **Ages Served**, **Insurance Plans**, and **Intake Access**. Separate multiple services or exact insurance-plan names with semicolons. Blank values become `Not verified`; do not infer coverage or age eligibility. Existing How-To and Important Notes hold detailed restrictions. Staff Notes remains private.
+
+After changing the feed code, update the Sheet's bound Apps Script project with `apps-script/Code.gs`. Save, then choose **Deploy → Manage deployments → Edit → Version: New version → Deploy** on the existing web-app deployment. Keep its URL and access settings unchanged. Saving source alone does not update the versioned public feed. The site supports both the previous and new feed formats; the new referral filters populate only once the revised feed is deployed and staff complete the fields.
+
+Use **Add to handout** on directory, guide, or map cards. **Review handout** allows removal and **Print / save PDF**. Selection is stored in sessionStorage for the current browser tab and contains only resource identifiers. It does not ask for names or case notes. Clear the selection when finished on a shared device. Removed or inactive resources are omitted from the printable handout after the next successful refresh.

@@ -1,8 +1,8 @@
-import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20260928-care';
+import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-referrals';
 
 const GUIDES={
   'primary-care':{
-    title:'Find a primary care provider',category:'Primary Care',mapType:'Primary Care',
+    title:'Find a primary care provider',category:'Primary Care, Dental & Vision',mapType:'Primary Care',
     description:'A primary care provider (PCP) is your starting point for routine health care. Choose a practice near the place you plan to live, then arrange a new-patient appointment.',
     steps:[['Choose where to start','Use St. Joseph’s new-patient scheduling, call Harbor Care, or find a health center near your next home. For other practices, use your insurance plan’s provider directory or call the member-services number on your card.'],['Check the fit','Ask whether the practice sees your age group, takes your exact insurance plan, and has new-patient appointments. If you are uninsured, ask about financial assistance or sliding fees.'],['Arrange your first visit','Complete the provider’s intake steps and confirm the date, office address, and transportation. If your insurance plan requires a designated PCP, ask how to select or update one.']],
     script:'Hi, I’m looking for a new primary care provider near [town]. My insurance is [exact plan], or I am currently uninsured. Are you accepting new patients in my age group? What is the next available appointment? What forms or records do I need, and how do I get started?',
@@ -18,7 +18,7 @@ const GUIDES={
 };
 
 export function guideFor(type) { return GUIDES[type] || GUIDES['primary-care']; }
-export function careResources(resources,category) {return resources.filter(item=>item.category===category).sort((a,b)=>Number(b.featured)-Number(a.featured)||a.sortOrder-b.sortOrder||a.title.localeCompare(b.title));}
+export function careResources(resources,category) {return resources.filter(item=>item.category===category || (category==='Primary Care, Dental & Vision' && item.category==='Primary Care')).sort((a,b)=>Number(b.featured)-Number(a.featured)||a.sortOrder-b.sortOrder||a.title.localeCompare(b.title));}
 
 async function init() {
   const therapy=new URLSearchParams(location.search).get('type')==='therapy';

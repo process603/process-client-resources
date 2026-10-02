@@ -20,12 +20,12 @@ test('homepage grouping covers every category once, including new staff categori
 test('care guides and map filters keep therapy, primary care, and medication distinct', () => {
   const snapshot=JSON.parse(readFileSync(new URL('../src/resources.json',import.meta.url),'utf8'));
   const resources=parseFeed({resources:snapshot});
-  assert.equal(careResources(resources,'Primary Care').length,4);
+  assert.equal(careResources(resources,'Primary Care, Dental & Vision').length,10);
   assert.equal(careResources(resources,'Therapy & Counseling').length,5);
   assert.equal(filterLocations(resources,'Primary Care','').length,2);
   assert.equal(filterLocations(resources,'Therapy','').length,2);
   assert.equal(guideFor('therapy').category,'Therapy & Counseling');
-  assert.equal(guideFor('invalid').category,'Primary Care');
+  assert.equal(guideFor('invalid').category,'Primary Care, Dental & Vision');
   assert.ok(careResources(resources,'Therapy & Counseling').some(r=>r.title.includes('Greater Nashua')&&r.latitude===null));
   assert.equal(resources.some(r=>'source' in r||'staffNotes' in r),false);
 });

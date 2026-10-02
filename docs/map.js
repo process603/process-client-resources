@@ -1,4 +1,4 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes } from './app.js?v=20260928-care';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-referrals';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
@@ -81,6 +81,7 @@ function card(item, marker) {
   if (item.url) addLink(actions,'Provider website ↗',item.url);
   const phone = safePhone(item.phone);
   if (phone) addLink(actions,'Call '+item.phone,phone);
+  actions.append(handoutButton(item));
   article.append(actions);
   return article;
 }

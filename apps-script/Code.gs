@@ -25,7 +25,8 @@ function buildPublicResources_() {
   const display = sheet.getDataRange().getDisplayValues();
   const headers = data[1].map(x => String(x).trim());
   const required = ['Category','Resource Name','Description','Button Text','URL','Phone','How-To','Audience','Featured','Active','Sort Order','Last Verified','Important Notes','Map Type','Address','Latitude','Longitude'];
-  const columns = Object.fromEntries(required.map(name => [name, headers.indexOf(name)]));
+  const optional = ['Services Offered','Ages Served','Insurance Plans','Intake Access'];
+  const columns = Object.fromEntries(required.concat(optional).map(name => [name, headers.indexOf(name)]));
   if (required.some(name => columns[name] < 0)) throw new Error('Resources columns missing');
   const categorySheet = book.getSheetByName('Categories');
   if (!categorySheet) throw new Error('Categories tab missing');
@@ -62,7 +63,11 @@ function buildPublicResources_() {
       mapType: get('Map Type'),
       address: get('Address'),
       latitude: get('Latitude'),
-      longitude: get('Longitude')
+      longitude: get('Longitude'),
+      servicesOffered: get('Services Offered') || 'Not verified',
+      agesServed: get('Ages Served') || 'Not verified',
+      insurancePlans: get('Insurance Plans') || 'Not verified',
+      intakeAccess: get('Intake Access') || 'Not verified'
       // Staff Notes is deliberately excluded.
     });
   }

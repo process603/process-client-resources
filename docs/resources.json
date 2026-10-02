@@ -1,256 +1,5 @@
 [
   {
-    "audience": "All",
-    "active": true,
-    "featured": true,
-    "lastVerified": "2026-09-28",
-    "mapType": "Therapy",
-    "address": "505 W Hollis Street, Suite 208, Nashua, NH 03062",
-    "latitude": 42.747369160056,
-    "longitude": -71.496939833984,
-    "url": "https://www.psychologytoday.com/us/therapists/spidaliere-psychological-associates-nashua-nh/169593",
-    "phone": "603-685-4644",
-    "importantNotes": "In-person and online options. The practice lists several insurers, including NH Medicaid plans; confirm your exact plan and clinician before booking.",
-    "category": "Therapy & Counseling",
-    "title": "Spidaliere Psychological Associates — Therapy",
-    "description": "Nashua group practice offering therapy for children, adolescents, adults, and couples; psychiatric medication services are also available.",
-    "buttonText": "Practice profile & contact",
-    "howTo": "Call or use the practice profile to request therapy intake. Ask about age eligibility, insurance, wait times, and in-person or telehealth appointments.",
-    "sortOrder": 15
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": false,
-    "lastVerified": "2026-09-28",
-    "mapType": "",
-    "address": "",
-    "latitude": "",
-    "longitude": "",
-    "category": "Therapy & Counseling",
-    "title": "Psychology Today — Find a Therapist",
-    "description": "Search the New Hampshire therapist directory by location and care preferences.",
-    "buttonText": "Find a therapist",
-    "url": "https://www.psychologytoday.com/us/therapists/new-hampshire",
-    "phone": "",
-    "howTo": "Search near the town where you will live. Use available filters for insurance, concerns, and online or in-person care, then contact the practice directly.",
-    "importantNotes": "Directory details are provider-reported. Confirm coverage, costs, credentials, and current openings with the practice.",
-    "sortOrder": 16
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": false,
-    "lastVerified": "2026-09-28",
-    "mapType": "Medication",
-    "address": "505 W Hollis Street, Suite 208, Nashua, NH 03062",
-    "latitude": 42.747369160056,
-    "longitude": -71.496939833984,
-    "url": "https://www.psychologytoday.com/us/therapists/spidaliere-psychological-associates-nashua-nh/169593",
-    "phone": "603-685-4644",
-    "importantNotes": "In-person and online options. The practice lists several insurers, including NH Medicaid plans; confirm your exact plan and clinician before booking.",
-    "category": "Medication Providers",
-    "title": "Spidaliere Psychological Associates — Psychiatric Medication Management",
-    "description": "Psychiatric nurse practitioners provide mental health medication management at this Nashua group practice.",
-    "buttonText": "Medication care & contact",
-    "howTo": "Ask specifically for a medication-management intake. Confirm age eligibility, insurance, referral requirements, and whether therapy needs a separate appointment.",
-    "sortOrder": 70
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": true,
-    "lastVerified": "2026-09-28",
-    "mapType": "",
-    "address": "245 Maple Street, Suite 5, Manchester, NH 03103",
-    "latitude": "",
-    "longitude": "",
-    "category": "Employment",
-    "title": "WorkPath Staffing — Manchester",
-    "description": "Staffing and job-placement support, including help for people returning to work during recovery.",
-    "buttonText": "Start a job search",
-    "url": "https://www.workpathstaffing.com/job-seekers",
-    "phone": "603-696-2382",
-    "howTo": "Complete the job-seeker form or call the Manchester office. Discuss your schedule, travel options, experience, and current openings; the site also offers in-person applications.",
-    "importantNotes": "No prior career experience is required to ask for help. Job requirements and placements vary. Confirm shift, worksite, pay schedule, and transportation before accepting.",
-    "sortOrder": 20
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": false,
-    "lastVerified": "2026-09-28",
-    "mapType": "",
-    "address": "42 S Main Street, Rochester, NH 03867",
-    "latitude": "",
-    "longitude": "",
-    "category": "Employment",
-    "title": "WorkPath Staffing — Rochester",
-    "description": "WorkPath's Rochester office connects job seekers with staffing opportunities.",
-    "buttonText": "Apply & contact WorkPath",
-    "url": "https://www.workpathstaffing.com/job-seekers",
-    "phone": "603-696-3102",
-    "howTo": "Complete the job-seeker form or call Rochester to discuss available assignments and application requirements.",
-    "importantNotes": "Published branch hours: Mon–Fri 4 AM–7 PM; weekends by appointment. Call to confirm intake timing and transportation needs.",
-    "sortOrder": 21
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": false,
-    "lastVerified": "2026-09-28",
-    "mapType": "",
-    "address": "229 Billerica Road, Unit 5, Chelmsford, MA 01824",
-    "latitude": "",
-    "longitude": "",
-    "category": "Employment",
-    "title": "Express Employment Professionals — Lowell/Nashua Area",
-    "description": "Staffing agency offering temporary, part-time, and full-time opportunities, including office, light-industrial, and skilled-trades work.",
-    "buttonText": "Search jobs & apply",
-    "url": "https://www.expresspros.com/us-massachusetts-lowell-nashua",
-    "phone": "978-256-1101",
-    "howTo": "Search local openings or use Apply Now. Call to discuss Nashua-area jobs, your availability, and hiring steps.",
-    "importantNotes": "The office is in Chelmsford, MA; job locations vary. Confirm the actual worksite, shift, screening requirements, and transportation. Office hours: Mon–Fri 8 AM–5 PM.",
-    "sortOrder": 30
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "featured": false,
-    "lastVerified": "2026-09-28",
-    "mapType": "",
-    "address": "16 S Willow Street, Manchester, NH 03103",
-    "latitude": "",
-    "longitude": "",
-    "category": "Employment",
-    "title": "PeopleReady — Manchester & JobStack",
-    "description": "Temporary staffing and flexible shift opportunities through PeopleReady and its JobStack service.",
-    "buttonText": "Branch & job search",
-    "url": "https://locations.peopleready.com/us/nh/manchester",
-    "phone": "603-647-1237",
-    "howTo": "Call the Manchester branch or use its Find Jobs/JobStack links. Ask about onboarding, required documents, worksite location, and available shifts.",
-    "importantNotes": "Assignments, screening, pay timing, and transportation vary. Confirm details before accepting work; a listing does not guarantee a job.",
-    "sortOrder": 40
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": true,
-    "category": "Primary Care",
-    "title": "St. Joseph Hospital — New Patient Scheduling",
-    "description": "Start here to arrange primary care with a St. Joseph practice in southern New Hampshire.",
-    "buttonText": "New patient scheduling",
-    "url": "https://stjosephhospital.com/new-patients/",
-    "phone": "603-884-3007",
-    "howTo": "Choose primary care in the new-patient scheduling options, or call for help. Confirm your insurance, age eligibility, and appointment location.",
-    "importantNotes": "Scheduling availability varies. An existing-patient portal login is not the same as arranging a first appointment.",
-    "sortOrder": 10
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": true,
-    "category": "Primary Care",
-    "title": "Harbor Care — Primary Care",
-    "description": "Primary care at Harbor Care Health & Wellness Center in Nashua.",
-    "buttonText": "Care & intake details",
-    "url": "https://harborcarenh.org/healthcare/",
-    "phone": "603-821-7788",
-    "howTo": "Call to request a new-patient appointment and forms. Ask about your exact insurance plan or sliding-fee options.",
-    "importantNotes": "Clinic hours: Mon–Fri 8 AM–5 PM. Confirm the location when booking.",
-    "mapType": "Primary Care",
-    "address": "45 High Street, Nashua, NH 03060",
-    "latitude": 42.76045223,
-    "longitude": -71.46741564,
-    "sortOrder": 11
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": false,
-    "category": "Primary Care",
-    "title": "Find a Health Center Near Your Next Home",
-    "description": "HRSA's health-center directory helps you find primary care near the town where you will live.",
-    "buttonText": "Find a health center",
-    "url": "https://findahealthcenter.hrsa.gov/",
-    "phone": "",
-    "howTo": "Search your destination town or ZIP code. Call a listed center to ask about new-patient intake, services, insurance, and fees.",
-    "importantNotes": "A directory listing does not guarantee an opening. Health centers serve people with or without insurance.",
-    "sortOrder": 12
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": false,
-    "category": "Primary Care",
-    "title": "St. Joseph Primary & Specialty Care — Amherst Street",
-    "description": "A Nashua primary-care practice in the St. Joseph Hospital network.",
-    "buttonText": "Practice & scheduling details",
-    "url": "https://stjosephhospital.com/primarycare/",
-    "phone": "603-883-7970",
-    "howTo": "Call the practice or use St. Joseph's new-patient scheduling page. Confirm insurance and which office your appointment is at.",
-    "importantNotes": "Published office hours: Mon–Fri 8 AM–5 PM. Call to confirm appointments.",
-    "mapType": "Primary Care",
-    "address": "460 Amherst Street, Nashua, NH 03063",
-    "latitude": 42.79047667982,
-    "longitude": -71.518750741568,
-    "sortOrder": 13
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": true,
-    "category": "Therapy & Counseling",
-    "title": "Harbor Care — Counseling & Mental Health",
-    "description": "Mental health services in Nashua, including counseling and psychiatric care.",
-    "buttonText": "Mental health intake",
-    "url": "https://harborcarenh.org/healthcare/mental-health/",
-    "phone": "603-821-7788",
-    "howTo": "Call and ask for an intake for ongoing counseling. Specify whether you need therapy, medication management, or both; confirm age eligibility, insurance, and availability.",
-    "importantNotes": "Ask about sliding-fee options and whether in-person or telehealth care fits your needs.",
-    "mapType": "Therapy",
-    "address": "45 High Street, Nashua, NH 03060",
-    "latitude": 42.76045223,
-    "longitude": -71.46741564,
-    "sortOrder": 20
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": false,
-    "category": "Therapy & Counseling",
-    "title": "Greater Nashua Mental Health — New Client Intake",
-    "description": "An intake starting point for community mental health services in the Nashua area.",
-    "buttonText": "Intake hours & locations",
-    "url": "https://gnmhc.org/contact/",
-    "phone": "603-889-6147",
-    "howTo": "Use published open-access intake hours, or call first to ask about eligibility, insurance, paperwork, and ongoing therapy options.",
-    "importantNotes": "Published walk-in intake: Mon–Thu 8–11:30 AM at 3 Pine Street Extension, Nashua. Check for schedule changes before traveling.",
-    "address": "3 Pine Street Extension, Nashua, NH 03060",
-    "sortOrder": 21
-  },
-  {
-    "audience": "All",
-    "active": true,
-    "lastVerified": "2026-09-28",
-    "featured": false,
-    "category": "Therapy & Counseling",
-    "title": "NH Community Mental Health Centers — Regional Directory",
-    "description": "Use the NH DHHS regional directory to identify a community mental health center serving your town.",
-    "buttonText": "Open regional directory",
-    "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/bmhs-list-map.pdf",
-    "phone": "",
-    "howTo": "Find your region, then check the center's current website or call its intake team. Ask about therapy, age eligibility, insurance, referrals, and wait times.",
-    "importantNotes": "This state directory is dated January 2022. Confirm contact and intake details with the center before traveling.",
-    "sortOrder": 22
-  },
-  {
     "category": "Housing & Sober Living",
     "title": "Rise Above Sober Living",
     "description": "Apply for Rise Above sober living with support from your case manager.",
@@ -265,8 +14,8 @@
     "importantNotes": "Confirm availability and eligibility with Rise Above before applying.",
     "mapType": "Sober Living",
     "address": "Nashua, NH",
-    "latitude": "42.7654",
-    "longitude": "-71.4676"
+    "latitude": 42.7654,
+    "longitude": -71.4676
   },
   {
     "category": "Housing & Sober Living",
@@ -283,8 +32,8 @@
     "importantNotes": "",
     "mapType": "Sober Living",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Housing & Sober Living",
@@ -301,8 +50,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Sober Living",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Housing & Sober Living",
@@ -319,8 +68,8 @@
     "importantNotes": "",
     "mapType": "Sober Living",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Housing & Sober Living",
@@ -337,8 +86,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Sober Living",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Housing & Sober Living",
@@ -355,8 +104,8 @@
     "importantNotes": "",
     "mapType": "Sober Living",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Housing & Sober Living",
@@ -373,8 +122,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Rochester, NH",
-    "latitude": "43.298493",
-    "longitude": "-70.977005"
+    "latitude": 43.298493,
+    "longitude": -70.977005
   },
   {
     "category": "Housing & Sober Living",
@@ -391,8 +140,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Dover, NH",
-    "latitude": "43.18636",
-    "longitude": "-70.883623"
+    "latitude": 43.18636,
+    "longitude": -70.883623
   },
   {
     "category": "Housing & Sober Living",
@@ -409,8 +158,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -427,8 +176,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Boscawen, NH",
-    "latitude": "43.311717",
-    "longitude": "-71.665381"
+    "latitude": 43.311717,
+    "longitude": -71.665381
   },
   {
     "category": "Housing & Sober Living",
@@ -445,8 +194,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Claremont, NH",
-    "latitude": "43.38647",
-    "longitude": "-72.334496"
+    "latitude": 43.38647,
+    "longitude": -72.334496
   },
   {
     "category": "Housing & Sober Living",
@@ -463,8 +212,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Claremont, NH",
-    "latitude": "43.38647",
-    "longitude": "-72.334496"
+    "latitude": 43.38647,
+    "longitude": -72.334496
   },
   {
     "category": "Housing & Sober Living",
@@ -481,8 +230,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -499,8 +248,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -517,8 +266,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Laconia, NH",
-    "latitude": "43.576535",
-    "longitude": "-71.482263"
+    "latitude": 43.576535,
+    "longitude": -71.482263
   },
   {
     "category": "Housing & Sober Living",
@@ -535,8 +284,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Littleton, NH",
-    "latitude": "44.343351",
-    "longitude": "-71.795118"
+    "latitude": 44.343351,
+    "longitude": -71.795118
   },
   {
     "category": "Housing & Sober Living",
@@ -553,8 +302,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -571,8 +320,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -589,8 +338,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Housing & Sober Living",
@@ -607,8 +356,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Housing & Sober Living",
@@ -625,8 +374,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Housing & Sober Living",
@@ -643,8 +392,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -661,8 +410,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -679,8 +428,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Housing & Sober Living",
@@ -697,8 +446,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Laconia, NH",
-    "latitude": "43.576535",
-    "longitude": "-71.482263"
+    "latitude": 43.576535,
+    "longitude": -71.482263
   },
   {
     "category": "Housing & Sober Living",
@@ -715,8 +464,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Housing & Sober Living",
@@ -733,8 +482,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Rochester, NH",
-    "latitude": "43.298493",
-    "longitude": "-70.977005"
+    "latitude": 43.298493,
+    "longitude": -70.977005
   },
   {
     "category": "Housing & Sober Living",
@@ -751,8 +500,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Keene, NH",
-    "latitude": "42.953842",
-    "longitude": "-72.306875"
+    "latitude": 42.953842,
+    "longitude": -72.306875
   },
   {
     "category": "Housing & Sober Living",
@@ -769,8 +518,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Rochester, NH",
-    "latitude": "43.298493",
-    "longitude": "-70.977005"
+    "latitude": 43.298493,
+    "longitude": -70.977005
   },
   {
     "category": "Housing & Sober Living",
@@ -787,8 +536,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling. Both may mean separate homes for men and women.",
     "mapType": "Sober Living",
     "address": "Goffstown, NH",
-    "latitude": "43.019198",
-    "longitude": "-71.555445"
+    "latitude": 43.019198,
+    "longitude": -71.555445
   },
   {
     "category": "Treatment Programs",
@@ -805,8 +554,8 @@
     "importantNotes": "Confirm program fit and coverage with admissions.",
     "mapType": "Programs",
     "address": "21 Factory St, Nashua, NH 03060",
-    "latitude": "42.761492",
-    "longitude": "-71.4665541"
+    "latitude": 42.761492,
+    "longitude": -71.4665541
   },
   {
     "category": "Treatment Programs",
@@ -823,8 +572,8 @@
     "importantNotes": "Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Programs",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
   },
   {
     "category": "Treatment Programs",
@@ -841,8 +590,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "70 Route 16B, Center Ossipee, NH",
-    "latitude": "43.7552504",
-    "longitude": "-71.14269001"
+    "latitude": 43.7552504,
+    "longitude": -71.14269001
   },
   {
     "category": "Treatment Programs",
@@ -859,8 +608,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "17 Kit Street, Keene, NH 03431",
-    "latitude": "42.920796",
-    "longitude": "-72.295163"
+    "latitude": 42.920796,
+    "longitude": -72.295163
   },
   {
     "category": "Treatment Programs",
@@ -877,8 +626,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "155 Main Dunstable Road, Suite 130, Nashua, NH 03060",
-    "latitude": "42.746489",
-    "longitude": "-71.489428"
+    "latitude": 42.746489,
+    "longitude": -71.489428
   },
   {
     "category": "Treatment Programs",
@@ -895,8 +644,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Programs",
     "address": "Millbury, MA",
-    "latitude": "42.192246",
-    "longitude": "-71.777649"
+    "latitude": 42.192246,
+    "longitude": -71.777649
   },
   {
     "category": "Treatment Programs",
@@ -913,8 +662,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "61 Brown Street, Haverhill, MA 01830",
-    "latitude": "42.764813",
-    "longitude": "-71.047092"
+    "latitude": 42.764813,
+    "longitude": -71.047092
   },
   {
     "category": "Treatment Programs",
@@ -931,8 +680,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Programs",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Treatment Programs",
@@ -949,8 +698,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "2957 Main Street, Bethlehem, NH 03574",
-    "latitude": "44.281367",
-    "longitude": "-71.649879"
+    "latitude": 44.281367,
+    "longitude": -71.649879
   },
   {
     "category": "Treatment Programs",
@@ -967,8 +716,8 @@
     "importantNotes": "Population: Not confirmed. Outpatient services; formerly Farnum's outpatient program.",
     "mapType": "Programs",
     "address": "700 Lake Avenue, Manchester, NH 03103",
-    "latitude": "42.9877252",
-    "longitude": "-71.4340699"
+    "latitude": 42.9877252,
+    "longitude": -71.4340699
   },
   {
     "category": "Treatment Programs",
@@ -985,8 +734,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "362 Route 108, Somersworth, NH 03878",
-    "latitude": "43.2592905",
-    "longitude": "-70.904186"
+    "latitude": 43.2592905,
+    "longitude": -70.904186
   },
   {
     "category": "Treatment Programs",
@@ -1003,8 +752,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "41 Sagamore Park Road, Hudson, NH 03051",
-    "latitude": "42.726993",
-    "longitude": "-71.431787"
+    "latitude": 42.726993,
+    "longitude": -71.431787
   },
   {
     "category": "Treatment Programs",
@@ -1021,8 +770,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "88 Lowell Street, Manchester, NH 03101",
-    "latitude": "42.993651",
-    "longitude": "-71.460577"
+    "latitude": 42.993651,
+    "longitude": -71.460577
   },
   {
     "category": "Treatment Programs",
@@ -1039,8 +788,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "2 Chenell Drive, Concord, NH 03301",
-    "latitude": "43.211837",
-    "longitude": "-71.495801"
+    "latitude": 43.211837,
+    "longitude": -71.495801
   },
   {
     "category": "Treatment Programs",
@@ -1057,8 +806,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "3 Pierce Road, Dublin, NH 03444",
-    "latitude": "42.905215",
-    "longitude": "-72.043475"
+    "latitude": 42.905215,
+    "longitude": -72.043475
   },
   {
     "category": "Treatment Programs",
@@ -1075,8 +824,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "1 Fisher Avenue, Boscawen, NH 03303",
-    "latitude": "43.288248",
-    "longitude": "-71.59581"
+    "latitude": 43.288248,
+    "longitude": -71.59581
   },
   {
     "category": "Treatment Programs",
@@ -1093,8 +842,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "75 Norumbega Road, Weston, MA 02493",
-    "latitude": "42.348322",
-    "longitude": "-71.261546"
+    "latitude": 42.348322,
+    "longitude": -71.261546
   },
   {
     "category": "Treatment Programs",
@@ -1111,8 +860,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "1D Commons Drive, Units 21–22, Londonderry, NH 03053",
-    "latitude": "42.8692748",
-    "longitude": "-71.3496661"
+    "latitude": 42.8692748,
+    "longitude": -71.3496661
   },
   {
     "category": "Treatment Programs",
@@ -1129,8 +878,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "392 Chestnut Street, Suite 200, Needham, MA 02492",
-    "latitude": "42.273485",
-    "longitude": "-71.237919"
+    "latitude": 42.273485,
+    "longitude": -71.237919
   },
   {
     "category": "Treatment Programs",
@@ -1147,8 +896,8 @@
     "importantNotes": "Children up to age 12 may be able to stay with or visit their mother during treatment. Contact intake about eligibility.",
     "mapType": "Programs",
     "address": "615 Amherst Street, Nashua, NH 03063",
-    "latitude": "42.801866",
-    "longitude": "-71.538451"
+    "latitude": 42.801866,
+    "longitude": -71.538451
   },
   {
     "category": "Treatment Programs",
@@ -1165,8 +914,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "74 Northeastern Boulevard, Suite 21 A–B, Nashua, NH 03062",
-    "latitude": "42.73645",
-    "longitude": "-71.485812"
+    "latitude": 42.73645,
+    "longitude": -71.485812
   },
   {
     "category": "Treatment Programs",
@@ -1183,8 +932,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "300 Hanover Street, Manchester, NH 03104",
-    "latitude": "42.991013",
-    "longitude": "-71.454823"
+    "latitude": 42.991013,
+    "longitude": -71.454823
   },
   {
     "category": "Treatment Programs",
@@ -1201,8 +950,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "244 High Watch Road, Effingham, NH 03882",
-    "latitude": "43.782297",
-    "longitude": "-71.048014"
+    "latitude": 43.782297,
+    "longitude": -71.048014
   },
   {
     "category": "Treatment Programs",
@@ -1219,8 +968,8 @@
     "importantNotes": "Serves people covered by New Hampshire Medicaid. Confirm eligibility with admissions.",
     "mapType": "Programs",
     "address": "35 West Broadway, Derry, NH 03038",
-    "latitude": "42.879321",
-    "longitude": "-71.329327"
+    "latitude": 42.879321,
+    "longitude": -71.329327
   },
   {
     "category": "Treatment Programs",
@@ -1237,8 +986,8 @@
     "importantNotes": "Mental health-focused residential program; ask admissions whether it fits your needs.",
     "mapType": "Programs",
     "address": "367 Shaker Road, Canterbury, NH 03224",
-    "latitude": "43.368996",
-    "longitude": "-71.492344"
+    "latitude": 43.368996,
+    "longitude": -71.492344
   },
   {
     "category": "Treatment Programs",
@@ -1255,8 +1004,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "6 Manor Parkway, Salem, NH 03079",
-    "latitude": "42.777104",
-    "longitude": "-71.250033"
+    "latitude": 42.777104,
+    "longitude": -71.250033
   },
   {
     "category": "Treatment Programs",
@@ -1273,8 +1022,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "446 Main Street, Plymouth, NH 03264",
-    "latitude": "43.780911",
-    "longitude": "-71.676292"
+    "latitude": 43.780911,
+    "longitude": -71.676292
   },
   {
     "category": "Treatment Programs",
@@ -1291,8 +1040,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "29 Ashleigh Drive, Derry, NH 03038",
-    "latitude": "42.899253",
-    "longitude": "-71.335636"
+    "latitude": 42.899253,
+    "longitude": -71.335636
   },
   {
     "category": "Treatment Programs",
@@ -1309,8 +1058,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "362 Middlesex Avenue, Wilmington, MA 01887",
-    "latitude": "42.568732",
-    "longitude": "-71.159726"
+    "latitude": 42.568732,
+    "longitude": -71.159726
   },
   {
     "category": "Treatment Programs",
@@ -1327,8 +1076,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "745 North Main Street, Laconia, NH 03246",
-    "latitude": "43.531297",
-    "longitude": "-71.472326"
+    "latitude": 43.531297,
+    "longitude": -71.472326
   },
   {
     "category": "Treatment Programs",
@@ -1345,8 +1094,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "75 Lindall Street, Danvers, MA 01923",
-    "latitude": "42.573041",
-    "longitude": "-70.94291"
+    "latitude": 42.573041,
+    "longitude": -70.94291
   },
   {
     "category": "Treatment Programs",
@@ -1363,8 +1112,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "9 Village Inn Road, Westminster, MA 01473",
-    "latitude": "42.542047",
-    "longitude": "-71.882234"
+    "latitude": 42.542047,
+    "longitude": -71.882234
   },
   {
     "category": "Treatment Programs",
@@ -1381,8 +1130,8 @@
     "importantNotes": "Population: Not confirmed. Located at the West Campus. Call to schedule an intake appointment.",
     "mapType": "Programs",
     "address": "29 Northwest Boulevard, Nashua, NH 03063",
-    "latitude": "42.802494",
-    "longitude": "-71.541932"
+    "latitude": 42.802494,
+    "longitude": -71.541932
   },
   {
     "category": "Treatment Programs",
@@ -1399,8 +1148,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Programs",
     "address": "151 South Street, Cummington, MA 01026",
-    "latitude": "42.482593",
-    "longitude": "-72.8851"
+    "latitude": 42.482593,
+    "longitude": -72.8851
   },
   {
     "category": "Treatment Programs",
@@ -1417,8 +1166,8 @@
     "importantNotes": "This pin is the public admissions/outpatient office, not the residential home. Office: Mon–Fri, 8 AM–4 PM.",
     "mapType": "Programs",
     "address": "40 Charles Street, Rochester, NH 03867",
-    "latitude": "43.30047619",
-    "longitude": "-70.97534734"
+    "latitude": 43.30047619,
+    "longitude": -70.97534734
   },
   {
     "category": "Treatment Programs",
@@ -1435,8 +1184,8 @@
     "importantNotes": "",
     "mapType": "Programs",
     "address": "1 Chief Justice Cushing Highway, Cohasset, MA 02025",
-    "latitude": "42.24221021",
-    "longitude": "-70.84459166"
+    "latitude": 42.24221021,
+    "longitude": -70.84459166
   },
   {
     "category": "Treatment Programs",
@@ -1453,8 +1202,8 @@
     "importantNotes": "Outpatient care; this location does not provide overnight residential treatment.",
     "mapType": "Programs",
     "address": "564 Main Street, Suite 100, Waltham, MA 02452",
-    "latitude": "42.37675316",
-    "longitude": "-71.23312913"
+    "latitude": 42.37675316,
+    "longitude": -71.23312913
   },
   {
     "category": "Treatment Programs",
@@ -1471,8 +1220,8 @@
     "importantNotes": "Age 65+. This is a senior psychiatric program, not a general addiction detox program.",
     "mapType": "Programs",
     "address": "172 Kinsley Street, Nashua, NH 03060",
-    "latitude": "42.75001795",
-    "longitude": "-71.4809285"
+    "latitude": 42.75001795,
+    "longitude": -71.4809285
   },
   {
     "category": "Benefits & NHEASY",
@@ -1489,8 +1238,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Benefits & NHEASY",
@@ -1507,8 +1256,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Benefits & NHEASY",
@@ -1525,8 +1274,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Phone Assistance",
@@ -1543,8 +1292,8 @@
     "importantNotes": "Service availability and eligibility vary; apply on the provider’s site.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Phone Assistance",
@@ -1561,8 +1310,8 @@
     "importantNotes": "Lifeline is generally limited to one benefit per household; confirm current terms with the provider.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Medical Transportation",
@@ -1579,8 +1328,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Medical Transportation",
@@ -1597,8 +1346,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Medical Transportation",
@@ -1615,8 +1364,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Health Insurance",
@@ -1633,8 +1382,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Health Insurance",
@@ -1651,8 +1400,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Health Insurance",
@@ -1669,8 +1418,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Health Insurance",
@@ -1687,8 +1436,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Medication Providers",
@@ -1705,8 +1454,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Medication Providers",
@@ -1723,8 +1472,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Medication",
     "address": "60 Rogers St, Suite 215, Manchester, NH 03103",
-    "latitude": "42.97926086",
-    "longitude": "-71.44905219"
+    "latitude": 42.97926086,
+    "longitude": -71.44905219
   },
   {
     "category": "Medication Providers",
@@ -1741,8 +1490,8 @@
     "importantNotes": "Population: Not confirmed.",
     "mapType": "Medication",
     "address": "45 High Street, Nashua, NH 03060",
-    "latitude": "42.76045223",
-    "longitude": "-71.46741564"
+    "latitude": 42.76045223,
+    "longitude": -71.46741564
   },
   {
     "category": "Medication Providers",
@@ -1759,8 +1508,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Medication",
     "address": "Concord, NH",
-    "latitude": "43.232493",
-    "longitude": "-71.561252"
+    "latitude": 43.232493,
+    "longitude": -71.561252
   },
   {
     "category": "Medication Providers",
@@ -1777,8 +1526,26 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Medication",
     "address": "Manchester, NH",
-    "latitude": "42.984941",
-    "longitude": "-71.444131"
+    "latitude": 42.984941,
+    "longitude": -71.444131
+  },
+  {
+    "category": "Medication Providers",
+    "title": "Spidaliere Psychological Associates — Psychiatric Medication Management",
+    "description": "Psychiatric nurse practitioners provide mental health medication management at this Nashua group practice.",
+    "buttonText": "Medication care & contact",
+    "url": "https://www.psychologytoday.com/us/therapists/spidaliere-psychological-associates-nashua-nh/169593",
+    "phone": "603-685-4644",
+    "howTo": "Ask specifically for a medication-management intake. Confirm age eligibility, insurance, referral requirements, and whether therapy needs a separate appointment.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 70,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "In-person and online options. The practice lists several insurers, including NH Medicaid plans; confirm your exact plan and clinician before booking.",
+    "mapType": "Medication",
+    "address": "505 W Hollis Street, Suite 208, Nashua, NH 03062",
+    "latitude": 42.74736916,
+    "longitude": -71.49693983
   },
   {
     "category": "IDs & Documents",
@@ -1795,8 +1562,8 @@
     "importantNotes": "There is no fee for a replacement card.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "IDs & Documents",
@@ -1813,8 +1580,8 @@
     "importantNotes": "Applying for a Social Security card is free. Read pages 1–4 for document requirements.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "IDs & Documents",
@@ -1831,8 +1598,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "IDs & Documents",
@@ -1849,8 +1616,8 @@
     "importantNotes": "For a first-time ID, use the separate NH DMV resource above.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "IDs & Documents",
@@ -1867,8 +1634,8 @@
     "importantNotes": "For births outside NH, contact that state or territory.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1885,8 +1652,8 @@
     "importantNotes": "Court forms and filing rules can change; ask the court which forms apply.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1903,8 +1670,8 @@
     "importantNotes": "Use only if this motion form fits your case; court staff can explain filing steps.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1921,8 +1688,8 @@
     "importantNotes": "The court decides whether a filing fee can be waived.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1939,8 +1706,8 @@
     "importantNotes": "Submitting a form does not itself change a court order or warrant.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1957,8 +1724,8 @@
     "importantNotes": "Eligibility depends on the case and the court’s decision.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Legal & Court Forms",
@@ -1975,8 +1742,8 @@
     "importantNotes": "Keep your contact information current with the court.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Employment",
@@ -1993,8 +1760,80 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Employment",
+    "title": "WorkPath Staffing — Manchester",
+    "description": "Staffing and job-placement support, including help for people returning to work during recovery.",
+    "buttonText": "Start a job search",
+    "url": "https://www.workpathstaffing.com/job-seekers",
+    "phone": "603-696-2382",
+    "howTo": "Complete the job-seeker form or call the Manchester office. Discuss your schedule, travel options, experience, and current openings; the site also offers in-person applications.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 20,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "No prior career experience is required to ask for help. Job requirements and placements vary. Confirm shift, worksite, pay schedule, and transportation before accepting.",
+    "mapType": "",
+    "address": "245 Maple Street, Suite 5, Manchester, NH 03103",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Employment",
+    "title": "WorkPath Staffing — Rochester",
+    "description": "WorkPath's Rochester office connects job seekers with staffing opportunities.",
+    "buttonText": "Apply & contact WorkPath",
+    "url": "https://www.workpathstaffing.com/job-seekers",
+    "phone": "603-696-3102",
+    "howTo": "Complete the job-seeker form or call Rochester to discuss available assignments and application requirements.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 21,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Published branch hours: Mon–Fri 4 AM–7 PM; weekends by appointment. Call to confirm intake timing and transportation needs.",
+    "mapType": "",
+    "address": "42 S Main Street, Rochester, NH 03867",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Employment",
+    "title": "Express Employment Professionals — Lowell/Nashua Area",
+    "description": "Staffing agency offering temporary, part-time, and full-time opportunities, including office, light-industrial, and skilled-trades work.",
+    "buttonText": "Search jobs & apply",
+    "url": "https://www.expresspros.com/us-massachusetts-lowell-nashua",
+    "phone": "978-256-1101",
+    "howTo": "Search local openings or use Apply Now. Call to discuss Nashua-area jobs, your availability, and hiring steps.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 30,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "The office is in Chelmsford, MA; job locations vary. Confirm the actual worksite, shift, screening requirements, and transportation. Office hours: Mon–Fri 8 AM–5 PM.",
+    "mapType": "",
+    "address": "229 Billerica Road, Unit 5, Chelmsford, MA 01824",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Employment",
+    "title": "PeopleReady — Manchester & JobStack",
+    "description": "Temporary staffing and flexible shift opportunities through PeopleReady and its JobStack service.",
+    "buttonText": "Branch & job search",
+    "url": "https://locations.peopleready.com/us/nh/manchester",
+    "phone": "603-647-1237",
+    "howTo": "Call the Manchester branch or use its Find Jobs/JobStack links. Ask about onboarding, required documents, worksite location, and available shifts.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 40,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Assignments, screening, pay timing, and transportation vary. Confirm details before accepting work; a listing does not guarantee a job.",
+    "mapType": "",
+    "address": "16 S Willow Street, Manchester, NH 03103",
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2011,8 +1850,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2029,8 +1868,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2047,8 +1886,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2065,8 +1904,8 @@
     "importantNotes": "For immediate danger or a medical emergency, call 911.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2083,8 +1922,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2101,8 +1940,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2119,8 +1958,8 @@
     "importantNotes": "This service is not available 24/7; check current hours on its website.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Recovery Resources",
@@ -2137,8 +1976,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "268 Main Street, Nashua, NH",
-    "latitude": "42.755024",
-    "longitude": "-71.462585"
+    "latitude": 42.755024,
+    "longitude": -71.462585
   },
   {
     "category": "Recovery Resources",
@@ -2155,8 +1994,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "40 Pleasant Street, Concord, NH",
-    "latitude": "43.20329",
-    "longitude": "-71.538185"
+    "latitude": 43.20329,
+    "longitude": -71.538185
   },
   {
     "category": "Recovery Resources",
@@ -2173,8 +2012,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "300 Hanover Street, Manchester, NH",
-    "latitude": "42.991013",
-    "longitude": "-71.454823"
+    "latitude": 42.991013,
+    "longitude": -71.454823
   },
   {
     "category": "Recovery Resources",
@@ -2191,8 +2030,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "798 Central Avenue, Dover, NH",
-    "latitude": "43.213179",
-    "longitude": "-70.875988"
+    "latitude": 43.213179,
+    "longitude": -70.875988
   },
   {
     "category": "Recovery Resources",
@@ -2209,8 +2048,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "24 Railroad Street, Keene, NH",
-    "latitude": "42.932567",
-    "longitude": "-72.276632"
+    "latitude": 42.932567,
+    "longitude": -72.276632
   },
   {
     "category": "Recovery Resources",
@@ -2227,8 +2066,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "7 Page Hill Road, Berlin, NH",
-    "latitude": "44.487997",
-    "longitude": "-71.160301"
+    "latitude": 44.487997,
+    "longitude": -71.160301
   },
   {
     "category": "Recovery Resources",
@@ -2245,8 +2084,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "80 Highland Street, Laconia, NH",
-    "latitude": "43.527886",
-    "longitude": "-71.460906"
+    "latitude": 43.527886,
+    "longitude": -71.460906
   },
   {
     "category": "Recovery Resources",
@@ -2263,8 +2102,8 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "85 Mechanic Street, Suite 3-B1, Lebanon, NH",
-    "latitude": "43.638349",
-    "longitude": "-72.260442"
+    "latitude": 43.638349,
+    "longitude": -72.260442
   },
   {
     "category": "Recovery Resources",
@@ -2281,8 +2120,44 @@
     "importantNotes": "",
     "mapType": "Doorways",
     "address": "11 Riverglen Lane, Suite 100, Littleton, NH",
-    "latitude": "44.304963",
-    "longitude": "-71.770218"
+    "latitude": 44.304963,
+    "longitude": -71.770218
+  },
+  {
+    "category": "Safety & Survivor Support",
+    "title": "RAINN — National Sexual Assault Hotline",
+    "description": "Free, confidential, 24/7 support for people affected by sexual assault or abuse.",
+    "buttonText": "Get help now",
+    "url": "https://rainn.org/help-and-healing/hotline/",
+    "phone": "800-656-4673",
+    "howTo": "Call 800-656-HOPE (4673), text HOPE to 64673, or use online chat for confidential support.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 10,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "If you are in immediate danger or need emergency medical help, call 911.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Safety & Survivor Support",
+    "title": "Bridges — Domestic & Sexual Violence Support",
+    "description": "Local support for domestic violence, sexual assault, stalking, and related safety needs in the Nashua and Milford area.",
+    "buttonText": "View local support",
+    "url": "https://www.bridgesnh.org/how-we-can-help/",
+    "phone": "603-889-0858",
+    "howTo": "Contact Bridges to speak with an advocate or review crisis intervention, shelter, court advocacy, hospital or police accompaniment, and support services.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 20,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "Bridges provides local survivor support and lists a 24-hour support line on its website.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Food & Financial Assistance",
@@ -2299,8 +2174,8 @@
     "importantNotes": "The form covers several programs. NH DHHS may require an interview and supporting documents.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Food & Financial Assistance",
@@ -2317,8 +2192,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Food & Financial Assistance",
@@ -2335,8 +2210,8 @@
     "importantNotes": "",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
   },
   {
     "category": "Food & Financial Assistance",
@@ -2353,8 +2228,8 @@
     "importantNotes": "Population: Not confirmed. Approximate city/town pin only; not the property location. Contact the provider for the address before traveling.",
     "mapType": "Other",
     "address": "Nashua, NH",
-    "latitude": "42.749074",
-    "longitude": "-71.490544"
+    "latitude": 42.749074,
+    "longitude": -71.490544
   },
   {
     "category": "Shelters",
@@ -2371,8 +2246,8 @@
     "importantNotes": "Public contact point shown; call outreach for shelter placement and the correct arrival location. A map pin does not mean a bed is available.",
     "mapType": "Shelters",
     "address": "2 Quincy Street, Nashua, NH 03060",
-    "latitude": "42.76098584",
-    "longitude": "-71.46176397"
+    "latitude": 42.76098584,
+    "longitude": -71.46176397
   },
   {
     "category": "Shelters",
@@ -2389,8 +2264,8 @@
     "importantNotes": "Call before traveling; beds and admission requirements vary.",
     "mapType": "Shelters",
     "address": "199 Manchester Street, Manchester, NH 03103",
-    "latitude": "42.99014133",
-    "longitude": "-71.45787048"
+    "latitude": 42.99014133,
+    "longitude": -71.45787048
   },
   {
     "category": "Shelters",
@@ -2407,8 +2282,8 @@
     "importantNotes": "Placement depends on availability and assessment; call before traveling.",
     "mapType": "Shelters",
     "address": "600 Lafayette Road, Portsmouth, NH 03801",
-    "latitude": "43.05302931",
-    "longitude": "-70.77039064"
+    "latitude": 43.05302931,
+    "longitude": -70.77039064
   },
   {
     "category": "Shelters",
@@ -2425,8 +2300,8 @@
     "importantNotes": "Year-round service; call before traveling. Resource-center visitor hours differ from overnight shelter access.",
     "mapType": "Shelters",
     "address": "122 Water Street, Keene, NH 03431",
-    "latitude": "42.93032279",
-    "longitude": "-72.27296131"
+    "latitude": 42.93032279,
+    "longitude": -72.27296131
   },
   {
     "category": "Shelters",
@@ -2443,8 +2318,8 @@
     "importantNotes": "Call before traveling; a listing does not guarantee placement.",
     "mapType": "Shelters",
     "address": "368 Washington Street, Dover, NH 03820",
-    "latitude": "43.19875175",
-    "longitude": "-70.89253787"
+    "latitude": 43.19875175,
+    "longitude": -70.89253787
   },
   {
     "category": "Shelters",
@@ -2461,8 +2336,8 @@
     "importantNotes": "Family shelter. A welfare-office referral is required; contact staff about room availability.",
     "mapType": "Shelters",
     "address": "200 Court Street, Laconia, NH 03246",
-    "latitude": "43.52181604",
-    "longitude": "-71.47375657"
+    "latitude": 43.52181604,
+    "longitude": -71.47375657
   },
   {
     "category": "Shelters",
@@ -2479,8 +2354,8 @@
     "importantNotes": "This pin marks the resource center. Winter shelter is seasonal, generally December–March; confirm dates and entry instructions.",
     "mapType": "Shelters",
     "address": "238 North Main Street, Concord, NH 03301",
-    "latitude": "43.21331535",
-    "longitude": "-71.53983645"
+    "latitude": 43.21331535,
+    "longitude": -71.53983645
   },
   {
     "category": "Food Pantries",
@@ -2497,8 +2372,8 @@
     "importantNotes": "Hours: Mon/Wed/Thu/Fri 11 AM–2:45 PM; Tue 6–7 PM; third Sun 2:30–4 PM. Produce: up to twice weekly; food box: monthly.",
     "mapType": "Food Pantries",
     "address": "2 Quincy Street, Nashua, NH 03060",
-    "latitude": "42.76098584",
-    "longitude": "-71.46176397"
+    "latitude": 42.76098584,
+    "longitude": -71.46176397
   },
   {
     "category": "Food Pantries",
@@ -2515,8 +2390,8 @@
     "importantNotes": "Hours by appointment: Mon/Wed 10 AM–noon; Tue/Thu 2–4 PM. Closed on listed holidays.",
     "mapType": "Food Pantries",
     "address": "3 Crown Street, Nashua, NH 03060",
-    "latitude": "42.75980663",
-    "longitude": "-71.45248135"
+    "latitude": 42.75980663,
+    "longitude": -71.45248135
   },
   {
     "category": "Food Pantries",
@@ -2533,8 +2408,8 @@
     "importantNotes": "Hours: Mon 1–4 PM; Tue–Fri 10 AM–noon and 1–4 PM. Closed weekends. Grocery visits every 30 days.",
     "mapType": "Food Pantries",
     "address": "176 Lake Avenue, Manchester, NH 03103",
-    "latitude": "42.98735246",
-    "longitude": "-71.45821957"
+    "latitude": 42.98735246,
+    "longitude": -71.45821957
   },
   {
     "category": "Food Pantries",
@@ -2551,8 +2426,8 @@
     "importantNotes": "Hours: Mon–Thu 10 AM–4 PM; Fri 10 AM–2 PM.",
     "mapType": "Food Pantries",
     "address": "124 Heritage Avenue, Unit 3, Portsmouth, NH 03801",
-    "latitude": "43.03186484",
-    "longitude": "-70.79334873"
+    "latitude": 43.03186484,
+    "longitude": -70.79334873
   },
   {
     "category": "Food Pantries",
@@ -2569,8 +2444,8 @@
     "importantNotes": "Pantry by appointment. Office hours: Mon–Fri 8:30 AM–4:30 PM; call ahead.",
     "mapType": "Food Pantries",
     "address": "1 Columbus Avenue, Milford, NH 03055",
-    "latitude": "42.83562191",
-    "longitude": "-71.65734246"
+    "latitude": 42.83562191,
+    "longitude": -71.65734246
   },
   {
     "category": "Food Pantries",
@@ -2587,8 +2462,8 @@
     "importantNotes": "Hours: Mon/Wed/Fri 10 AM–noon; Mon/Wed 7–8 PM; Tue by appointment. Weather and holiday closures apply.",
     "mapType": "Food Pantries",
     "address": "53 Lincoln Street, Exeter, NH 03833",
-    "latitude": "42.98128342",
-    "longitude": "-70.9576504"
+    "latitude": 42.98128342,
+    "longitude": -70.9576504
   },
   {
     "category": "Food Pantries",
@@ -2605,8 +2480,8 @@
     "importantNotes": "Pantry: Wed 12:30–5:30 PM drive-through; Thu 11:30 AM–4 PM walk-through. Hot meals: Mon–Fri 5–6:20 PM.",
     "mapType": "Food Pantries",
     "address": "37 Mechanic Street, Keene, NH 03431",
-    "latitude": "42.93650251",
-    "longitude": "-72.27880687"
+    "latitude": 42.93650251,
+    "longitude": -72.27880687
   },
   {
     "category": "Food Pantries",
@@ -2623,8 +2498,8 @@
     "importantNotes": "Hours: Mon–Fri 8:30 AM–4:30 PM.",
     "mapType": "Food Pantries",
     "address": "577 Central Avenue, Suite 10, Dover, NH 03820",
-    "latitude": "43.20190975",
-    "longitude": "-70.8758983"
+    "latitude": 43.20190975,
+    "longitude": -70.8758983
   },
   {
     "category": "Food Pantries",
@@ -2641,8 +2516,8 @@
     "importantNotes": "Hours: Tuesday noon–2 PM.",
     "mapType": "Food Pantries",
     "address": "10 Cold Spring Manor, Rochester, NH 03867",
-    "latitude": "43.29053594",
-    "longitude": "-70.98116329"
+    "latitude": 43.29053594,
+    "longitude": -70.98116329
   },
   {
     "category": "Food Pantries",
@@ -2659,8 +2534,8 @@
     "importantNotes": "Confirmed published hours: Monday noon–2 PM. Call about any additional evening sessions.",
     "mapType": "Food Pantries",
     "address": "1269 Union Avenue, Laconia, NH 03246",
-    "latitude": "43.56027947",
-    "longitude": "-71.45290642"
+    "latitude": 43.56027947,
+    "longitude": -71.45290642
   },
   {
     "category": "Food Pantries",
@@ -2677,8 +2552,8 @@
     "importantNotes": "Meals: lunch Mon–Fri noon–12:45 PM; dinner daily 5–5:45 PM; breakfast Sat/Sun 8–8:45 AM. Check the website for seasonal breakfast changes.",
     "mapType": "Food Pantries",
     "address": "2 South Commercial Street, Concord, NH 03301",
-    "latitude": "43.21486206",
-    "longitude": "-71.53833872"
+    "latitude": 43.21486206,
+    "longitude": -71.53833872
   },
   {
     "category": "Food Pantries",
@@ -2695,7 +2570,277 @@
     "importantNotes": "First come, first served while supplies last. No ID required. Locations and dates change.",
     "mapType": "",
     "address": "",
-    "latitude": "",
-    "longitude": ""
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "St. Joseph Hospital — New Patient Scheduling",
+    "description": "Start here to arrange primary care with a St. Joseph practice in southern New Hampshire.",
+    "buttonText": "New patient scheduling",
+    "url": "https://stjosephhospital.com/new-patients/",
+    "phone": "603-884-3007",
+    "howTo": "Choose primary care in the new-patient scheduling options, or call for help. Confirm your insurance, age eligibility, and appointment location.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 10,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Scheduling availability varies. An existing-patient portal login is not the same as arranging a first appointment.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "Harbor Care — Primary Care",
+    "description": "Primary care at Harbor Care Health & Wellness Center in Nashua.",
+    "buttonText": "Care & intake details",
+    "url": "https://harborcarenh.org/healthcare/",
+    "phone": "603-821-7788",
+    "howTo": "Call to request a new-patient appointment and forms. Ask about your exact insurance plan or sliding-fee options.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 11,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Clinic hours: Mon–Fri 8 AM–5 PM. Confirm the location when booking.",
+    "mapType": "Primary Care",
+    "address": "45 High Street, Nashua, NH 03060",
+    "latitude": 42.76045223,
+    "longitude": -71.46741564
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "Find a Health Center Near Your Next Home",
+    "description": "HRSA's health-center directory helps you find primary care near the town where you will live.",
+    "buttonText": "Find a health center",
+    "url": "https://findahealthcenter.hrsa.gov/",
+    "phone": "",
+    "howTo": "Search your destination town or ZIP code. Call a listed center to ask about new-patient intake, services, insurance, and fees.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 12,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "A directory listing does not guarantee an opening. Health centers serve people with or without insurance.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "St. Joseph Primary & Specialty Care — Amherst Street",
+    "description": "A Nashua primary-care practice in the St. Joseph Hospital network.",
+    "buttonText": "Practice & scheduling details",
+    "url": "https://stjosephhospital.com/primarycare/",
+    "phone": "603-883-7970",
+    "howTo": "Call the practice or use St. Joseph's new-patient scheduling page. Confirm insurance and which office your appointment is at.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 13,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Published office hours: Mon–Fri 8 AM–5 PM. Call to confirm appointments.",
+    "mapType": "Primary Care",
+    "address": "460 Amherst Street, Nashua, NH 03063",
+    "latitude": 42.79047668,
+    "longitude": -71.51875074
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "NH Smiles / DentaQuest — Find a Medicaid Dentist",
+    "description": "Search dentists participating in New Hampshire Medicaid's dental program.",
+    "buttonText": "Find a dentist",
+    "url": "https://www.dentaquest.com/en/find-a-dentist",
+    "phone": "",
+    "howTo": "Search by city or ZIP code and confirm the office is accepting new NH Medicaid patients before scheduling.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 20,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "DentaQuest administers the New Hampshire Smiles Medicaid dental network. Provider participation and new-patient status can change.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "Harbor Care — Dental Clinic",
+    "description": "Comprehensive dental care in Nashua with Medicaid accepted and a sliding-fee scale available.",
+    "buttonText": "Dental services",
+    "url": "https://harborcarenh.org/healthcare/dental-care/",
+    "phone": "603-821-7788",
+    "howTo": "Call to request a dental appointment and confirm current availability and coverage for your specific Medicaid plan.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 21,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "45 High Street, Nashua. Harbor Care states it accepts Medicaid, Medicare, and most private insurance and offers a sliding-fee scale.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "NH Medicaid — Find an Eye Care Provider",
+    "description": "Official state provider search for optometrists and other Medicaid-enrolled eye-care providers.",
+    "buttonText": "Find eye care",
+    "url": "https://www.nhmmis.nh.gov/portals/wps/portal/FindaHealthCareProvider",
+    "phone": "",
+    "howTo": "Choose an eye-care provider type such as optometrist, add your city or ZIP code, and select your Medicaid plan when available. Call before booking to confirm new-patient availability.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 22,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "Provider enrollment can change. Confirm your exact plan and benefits with the office or your Medicaid plan.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "Nashua Eye Associates",
+    "description": "Local eye-care practice with Nashua, Hudson, and Milford locations; its official insurance page lists Medicaid among accepted health insurance plans.",
+    "buttonText": "View insurance & locations",
+    "url": "https://www.nashuaeye.com/patient-resources/insurance/",
+    "phone": "603-882-9800",
+    "howTo": "Call the Nashua office and confirm they accept your specific NH Medicaid plan and are taking new patients before scheduling.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 23,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "Nashua office: 5 Coliseum Avenue, Nashua. Insurance contracts can change.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "NH Medicaid — Find a Health Care Provider",
+    "description": "Official NH Medicaid provider search for participating clinicians and practices.",
+    "buttonText": "Search Medicaid providers",
+    "url": "https://www.nhmmis.nh.gov/portals/wps/portal/FindaHealthCareProvider",
+    "phone": "",
+    "howTo": "Search by provider type and location. Call the office to confirm it is accepting new patients and your current plan.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 24,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "Useful for primary and eye care. For dental, use DentaQuest/NH Smiles first.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Primary Care, Dental & Vision",
+    "title": "WellSense NH Medicaid — Vision Provider Search",
+    "description": "Find in-network vision providers for WellSense New Hampshire Medicaid.",
+    "buttonText": "Find a vision provider",
+    "url": "https://www.wellsense.org/members/nh/new-hampshire-medicaid/find-a-provider",
+    "phone": "855-833-8128",
+    "howTo": "Open the provider directory and choose Vision Provider. Call Member Service if you need help finding an in-network office.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 25,
+    "lastVerified": "2026-10-01",
+    "importantNotes": "WellSense lists routine eye exams and vision benefits for NH Medicaid members; confirm current benefit limits before scheduling.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Therapy & Counseling",
+    "title": "Harbor Care — Counseling & Mental Health",
+    "description": "Mental health services in Nashua, including counseling and psychiatric care.",
+    "buttonText": "Mental health intake",
+    "url": "https://harborcarenh.org/healthcare/mental-health/",
+    "phone": "603-821-7788",
+    "howTo": "Call and ask for an intake for ongoing counseling. Specify whether you need therapy, medication management, or both; confirm age eligibility, insurance, and availability.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 20,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Ask about sliding-fee options and whether in-person or telehealth care fits your needs.",
+    "mapType": "Therapy",
+    "address": "45 High Street, Nashua, NH 03060",
+    "latitude": 42.76045223,
+    "longitude": -71.46741564
+  },
+  {
+    "category": "Therapy & Counseling",
+    "title": "Greater Nashua Mental Health — New Client Intake",
+    "description": "An intake starting point for community mental health services in the Nashua area.",
+    "buttonText": "Intake hours & locations",
+    "url": "https://gnmhc.org/contact/",
+    "phone": "603-889-6147",
+    "howTo": "Use published open-access intake hours, or call first to ask about eligibility, insurance, paperwork, and ongoing therapy options.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 21,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Published walk-in intake: Mon–Thu 8–11:30 AM at 3 Pine Street Extension, Nashua. Check for schedule changes before traveling.",
+    "mapType": "",
+    "address": "3 Pine Street Extension, Nashua, NH 03060",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Therapy & Counseling",
+    "title": "NH Community Mental Health Centers — Regional Directory",
+    "description": "Use the NH DHHS regional directory to identify a community mental health center serving your town.",
+    "buttonText": "Open regional directory",
+    "url": "https://www.dhhs.nh.gov/sites/g/files/ehbemt476/files/documents2/bmhs-list-map.pdf",
+    "phone": "",
+    "howTo": "Find your region, then check the center's current website or call its intake team. Ask about therapy, age eligibility, insurance, referrals, and wait times.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 22,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "This state directory is dated January 2022. Confirm contact and intake details with the center before traveling.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
+  },
+  {
+    "category": "Therapy & Counseling",
+    "title": "Spidaliere Psychological Associates — Therapy",
+    "description": "Nashua group practice offering therapy for children, adolescents, adults, and couples; psychiatric medication services are also available.",
+    "buttonText": "Practice profile & contact",
+    "url": "https://www.psychologytoday.com/us/therapists/spidaliere-psychological-associates-nashua-nh/169593",
+    "phone": "603-685-4644",
+    "howTo": "Call or use the practice profile to request therapy intake. Ask about age eligibility, insurance, wait times, and in-person or telehealth appointments.",
+    "audience": "All",
+    "featured": true,
+    "sortOrder": 15,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "In-person and online options. The practice lists several insurers, including NH Medicaid plans; confirm your exact plan and clinician before booking.",
+    "mapType": "Therapy",
+    "address": "505 W Hollis Street, Suite 208, Nashua, NH 03062",
+    "latitude": 42.74736916,
+    "longitude": -71.49693983
+  },
+  {
+    "category": "Therapy & Counseling",
+    "title": "Psychology Today — Find a Therapist",
+    "description": "Search the New Hampshire therapist directory by location and care preferences.",
+    "buttonText": "Find a therapist",
+    "url": "https://www.psychologytoday.com/us/therapists/new-hampshire",
+    "phone": "",
+    "howTo": "Search near the town where you will live. Use available filters for insurance, concerns, and online or in-person care, then contact the practice directly.",
+    "audience": "All",
+    "featured": false,
+    "sortOrder": 16,
+    "lastVerified": "2026-09-28",
+    "importantNotes": "Directory details are provider-reported. Confirm coverage, costs, credentials, and current openings with the practice.",
+    "mapType": "",
+    "address": "",
+    "latitude": null,
+    "longitude": null
   }
 ]

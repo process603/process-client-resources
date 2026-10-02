@@ -7,9 +7,9 @@
   <meta name="referrer" content="no-referrer">
   <meta name="description" content="A simple starting point for New Hampshire housing, benefits, rides, documents, employment, and recovery resources.">
   <title>Client Resource Hub | The Process Recovery Center</title>
-  <link rel="stylesheet" href="./styles.css?v=20260928-care">
+  <link rel="stylesheet" href="./styles.css?v=20261002-referrals">
   <script src="./config.js"></script>
-  <script type="module" src="./app.js?v=20260928-care"></script>
+  <script type="module" src="./app.js?v=20261002-referrals"></script>
 </head>
 <body>
   <a class="skip-link" href="#topics">Skip to resources</a>
@@ -27,7 +27,7 @@
           <p class="eyebrow">THE PROCESS RECOVERY CENTER · NEW HAMPSHIRE</p>
           <h1>One place to find<br><span>your next step.</span></h1>
           <p>Find housing, food, health care, benefits, and recovery support. Choose a starting point or search the full directory.</p>
-          <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" autocomplete="off" placeholder="Search resources" aria-controls="resource-list"><kbd>/</kbd></label>
+          <label class="search" for="search"><span aria-hidden="true">⌕</span><input id="search" aria-label="Search resources" type="search" autocomplete="off" placeholder="Search resources" aria-controls="resource-list"><kbd>/</kbd></label>
           <nav class="quick-actions" aria-label="Quick starting points"><a href="./map.html?type=Food%20Pantries">Find food</a><a href="./map.html?type=Shelters">Find shelter</a><a href="./care.html?type=primary-care">Find a doctor</a><a href="./care.html?type=therapy">Find a therapist</a><a href="./map.html">Explore map ↗</a></nav>
         </div>
         <aside class="intro-callout"><span class="callout-icon" aria-hidden="true">↗</span><p>Start here, then take it one step at a time.</p><small>If a link is missing or unclear, your case manager can help.</small></aside>
@@ -43,6 +43,7 @@
     <section class="resources shell" id="resources" aria-labelledby="resources-heading">
       <div class="section-title resource-title"><div><p class="eyebrow dark">THE RESOURCE LIST</p><h2 id="resources-heading">All resources</h2></div><p id="feed-state">Showing saved resource list</p></div>
       <div class="resource-tools"><div id="audience-filters" class="audience-filters" role="group" aria-label="Filter housing by audience"></div><span id="result-count" aria-live="polite"></span></div>
+      <details class="referral-panel"><summary>Filter by service, age, insurance, or intake</summary><p>These filters use recorded details, not live availability. “Not verified” means staff have not confirmed that field.</p><div id="referral-filters" class="referral-filters"></div><button id="clear-referral" class="browse-button" type="button">Clear referral filters</button></details>
       <a id="category-guide" class="map-promo" href="./care.html" hidden>Need help getting started? Open the step-by-step guide ↗</a>
       <div id="resource-list" class="resource-list" aria-live="polite"></div>
       <button id="browse-all" class="browse-button" type="button">Browse all resources</button>
