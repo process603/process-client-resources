@@ -55,7 +55,7 @@ function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
     url:safeHttpUrl(input.url), phone:text('phone'), howTo:text('howTo'), audience:['All','Men','Women'].includes(input.audience)?input.audience:'All',
     featured:input.featured === true, sortOrder:Number(input.sortOrder) || 999, lastVerified:text('lastVerified'), importantNotes:text('importantNotes'),
     servicesOffered:text('servicesOffered') || 'Not verified', agesServed:text('agesServed') || 'Not verified', insurancePlans:text('insurancePlans') || 'Not verified', intakeAccess:text('intakeAccess') || 'Not verified',
-    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'].includes(input.mapType) ? input.mapType : '',
+    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Other'].includes(input.mapType) ? input.mapType : '',
     address:privateLocation ? '' : text('address'), latitude:privateLocation ? null : coordinate(input.latitude,-90,90), longitude:privateLocation ? null : coordinate(input.longitude,-180,180) };
 }
 function population(item) {
@@ -202,9 +202,9 @@ async function init() {
 
 export { normalize, safeHttpUrl, safePhone, stale, parseFeed, sortResources, categoryList, loadPublicFeed, population, populationLabel, publicNotes, matchesPopulation, approximateLocation, groupedCategories, resourceCard };
 
-const REFERRAL_FIELDS=[['servicesOffered','Services offered'],['agesServed','Ages served'],['insurancePlans','Insurance plans'],['intakeAccess','Intake access']];
+const REFERRAL_FIELDS=[['servicesOffered','Services offered'],['insurancePlans','Insurance plans'],['intakeAccess','Intake access']];
 export function referralTokens(value) {return [...new Set(String(value||'Not verified').split(';').map(x=>x.trim()).filter(Boolean))];}
-export function matchesReferral(item,filters={}) {return REFERRAL_FIELDS.every(([key])=>!filters[key] || referralTokens(item[key]).some(value=>value.toLowerCase()===filters[key].toLowerCase() || (key==='agesServed' && value==='All ages' && ['Adults (18+)','Children (under 18)'].includes(filters[key]))));}
+export function matchesReferral(item,filters={}) {return REFERRAL_FIELDS.every(([key])=>!filters[key] || referralTokens(item[key]).some(value=>value.toLowerCase()===filters[key].toLowerCase()));}
 function setupReferralFilters() {
   const target=document.querySelector('#referral-filters');
   for(const [key,label] of REFERRAL_FIELDS){const field=node('label','',label);const select=node('select');select.id='filter-'+key;select.dataset.field=key;field.append(select);target.append(field);select.addEventListener('change',()=>{state.referral[key]=select.value;state.showAll=true;render();});}

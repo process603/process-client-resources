@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-recovery';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-dental';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Therapy','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All' };
 let map = null;
 let layer = null;

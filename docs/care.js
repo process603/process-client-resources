@@ -1,4 +1,4 @@
-import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-recovery';
+import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-dental';
 
 const GUIDES={
   'primary-care':{

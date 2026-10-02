@@ -18,9 +18,9 @@ test('referral filters never interpret missing data or a partial plan name as co
  assert.equal(matchesReferral(item,{servicesOffered:'Dental'}),true);
  assert.equal(matchesReferral(item,{insurancePlans:'Medicaid'}),false);
  assert.equal(matchesReferral(item,{insurancePlans:'WellSense NH Medicaid'}),true);
- assert.equal(matchesReferral(item,{agesServed:'Adults (18+)'}),false);
- assert.equal(matchesReferral(item,{agesServed:'Not verified'}),true);
- assert.equal(matchesReferral(item,{servicesOffered:'Dental',agesServed:'Adults (18+)'}),false);
+ assert.equal(matchesReferral(item,{intakeAccess:'Appointment required'}),false);
+ assert.equal(matchesReferral(item,{intakeAccess:'Not verified'}),true);
+ assert.equal(matchesReferral(item,{servicesOffered:'Dental',intakeAccess:'Appointment required'}),false);
 });
 test('handout identities distinguish locations and services while remaining stable on contact edits',()=>{
  const a={title:'Clinic',category:'Therapy & Counseling',address:'1 Main St'};
