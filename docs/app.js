@@ -1,8 +1,8 @@
 const CATEGORIES = [
   { name: 'Housing & Sober Living', icon: '⌂', description: 'Homes & applications' },
   { name: 'Shelters', icon: '⌂', description: 'Shelter & housing access' },
-  { name: 'Treatment Programs', icon: '✳', description: 'Care across New Hampshire' },
-  { name: 'Primary Care', icon: '✚', description: 'Find a doctor & get started' },
+  { name: 'Treatment Programs', icon: '✳', description: 'Substance use treatment across New Hampshire' },
+  { name: 'Primary Care, Dental & Vision', icon: '✚', description: 'Doctors, dentists & eye care' },
   { name: 'Therapy & Counseling', icon: '♡', description: 'Find support & arrange intake' },
   { name: 'Benefits & NHEASY', icon: '▤', description: 'Coverage & assistance' },
   { name: 'Phone Assistance', icon: '☎', description: 'Phone applications' },
@@ -19,7 +19,7 @@ const CATEGORIES = [
 ];
 const CATEGORY_GROUPS = [
   {name:'Housing & Basic Needs', categories:['Housing & Sober Living','Shelters','Food Pantries','Food & Financial Assistance']},
-  {name:'Health & Treatment', categories:['Primary Care','Therapy & Counseling','Treatment Programs','Medication Providers']},
+  {name:'Health & Treatment', categories:['Primary Care, Dental & Vision','Therapy & Counseling','Treatment Programs','Medication Providers']},
   {name:'Benefits & Access', categories:['Benefits & NHEASY','Health Insurance','Medical Transportation','Phone Assistance']},
   {name:'Documents, Work & Legal', categories:['IDs & Documents','Employment','Legal & Court Forms']},
   {name:'Recovery & Support', categories:['Recovery Resources','Safety & Survivor Support']}
@@ -136,12 +136,12 @@ function render() {
   const q=state.query.toLocaleLowerCase();
   const items=state.resources.filter(item => (!state.category || item.category===state.category) && matchesPopulation(item,state.audience) && [item.title,item.description,item.category,item.howTo,publicNotes(item),item.address].join(' ').toLocaleLowerCase().includes(q)).sort(sortResources);
   const preview=!state.category&&!state.query&&!state.showAll;
-  const startingCategories=['Housing & Sober Living','Shelters','Food Pantries','Primary Care','Therapy & Counseling','Benefits & NHEASY','Treatment Programs','Recovery Resources','Safety & Survivor Support'];
+  const startingCategories=['Housing & Sober Living','Shelters','Food Pantries','Primary Care, Dental & Vision','Therapy & Counseling','Benefits & NHEASY','Treatment Programs','Recovery Resources','Safety & Survivor Support'];
   const displayed=preview?startingCategories.map(category=>items.find(item=>item.category===category)).filter(Boolean):items;
   $('#resource-list').replaceChildren(...displayed.map(resourceCard));
   $('#browse-all').hidden=!preview;
-  $('#category-guide').hidden=!['Primary Care','Therapy & Counseling'].includes(state.category);
-  $('#category-guide').href=state.category==='Primary Care'?'./care.html?type=primary-care':'./care.html?type=therapy';
+  $('#category-guide').hidden=!['Primary Care, Dental & Vision','Therapy & Counseling'].includes(state.category);
+  $('#category-guide').href=state.category==='Primary Care, Dental & Vision'?'./care.html?type=primary-care':'./care.html?type=therapy';
   $('#result-count').textContent=preview?`${displayed.length} starting points · ${items.length} resources available`:`${items.length} resource${items.length===1?'':'s'}`;
   $('#resources-heading').textContent=state.category || (state.query?'Search results':preview?'Useful starting points':'All resources');
   $('#empty-state').hidden=items.length!==0;
