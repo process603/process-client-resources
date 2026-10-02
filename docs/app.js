@@ -136,9 +136,16 @@ function resourceCard(item) {
   card.append(referral);
   return card;
 }
+export function pinnedResource(item) {
+  return (item.category==='Treatment Programs' && item.title==='The Process Recovery Center') ||
+    (item.category==='Housing & Sober Living' && item.title==='Rise Above Sober Living');
+}
+export function alphabeticalResources(a,b) {
+  return Number(pinnedResource(b))-Number(pinnedResource(a)) || a.title.localeCompare(b.title, 'en', {sensitivity:'base',numeric:true});
+}
 function sortResources(a,b) {
   const ac=state.categories.findIndex(c=>c.name===a.category), bc=state.categories.findIndex(c=>c.name===b.category);
-  return ac-bc || Number(b.featured)-Number(a.featured) || a.sortOrder-b.sortOrder || a.title.localeCompare(b.title);
+  return ac-bc || alphabeticalResources(a,b);
 }
 function render() {
   const q=state.query.toLocaleLowerCase();

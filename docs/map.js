@@ -1,7 +1,15 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton } from './app.js?v=20261002-dental';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources } from './app.js?v=20261002-sort';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Other'];
-const state = { resources: [], type: 'All', query: '', population: 'All' };
+const state = { resources: [], type: 'All', query: '', population: 'All', sort: 'alphabetical' };
+const PROCESS_ORIGIN={latitude:42.761492,longitude:-71.4665541};
+export function distanceFromProcess(item) {
+  if(!Number.isFinite(item.latitude)||!Number.isFinite(item.longitude))return Infinity;
+  const rad=x=>x*Math.PI/180;
+  const dlat=rad(item.latitude-PROCESS_ORIGIN.latitude),dlon=rad(item.longitude-PROCESS_ORIGIN.longitude);
+  const a=Math.sin(dlat/2)**2+Math.cos(rad(PROCESS_ORIGIN.latitude))*Math.cos(rad(item.latitude))*Math.sin(dlon/2)**2;
+  return 3958.7613*2*Math.asin(Math.sqrt(Math.min(1,Math.max(0,a))));
+}
 let map = null;
 let layer = null;
 
@@ -9,13 +17,14 @@ export function mappable(resources) {
   return resources.filter(item => item.mapType && item.address && Number.isFinite(item.latitude) && Number.isFinite(item.longitude));
 }
 
-export function filterLocations(resources, type, query, selectedPopulation = 'All') {
+export function filterLocations(resources, type, query, selectedPopulation = 'All', sort = 'alphabetical') {
   const term = String(query || '').trim().toLocaleLowerCase();
   return mappable(resources).filter(item =>
     (type === 'All' || item.mapType === type) &&
     matchesPopulation(item, selectedPopulation) &&
     [item.title,item.category,item.description,item.address].join(' ').toLocaleLowerCase().includes(term)
-  ).sort((a,b) => a.title.localeCompare(b.title));
+  ).sort((a,b) => Number(pinnedResource(b))-Number(pinnedResource(a)) ||
+    (sort==='distance' ? distanceFromProcess(a)-distanceFromProcess(b) : 0) || alphabeticalResources(a,b));
 }
 
 export function groupLocations(items) {
@@ -61,6 +70,7 @@ function card(item, marker) {
   if (item.description) article.append(element('p','',item.description));
   const address = element('address','',item.address);
   article.append(address);
+  if(state.sort==='distance') article.append(element('p','verified-date',`About ${distanceFromProcess(item).toFixed(1)} straight-line miles from Process${approximateLocation(item)?' · approximate town pin':''}${pinnedResource(item)?' · pinned first':''}`));
   if (item.howTo) article.append(element('p','access-details',item.howTo));
   if (publicNotes(item) && !approximateLocation(item)) article.append(element('p','service-notes',publicNotes(item)));
   if (item.lastVerified) article.append(element('p','verified-date','Details checked: '+item.lastVerified));
@@ -110,7 +120,7 @@ function markerFor(items) {
 }
 
 function render() {
-  const items = filterLocations(state.resources,state.type,state.query,state.population);
+  const items = filterLocations(state.resources,state.type,state.query,state.population,state.sort);
   const list = document.querySelector('#map-results');
   const count = document.querySelector('#map-count');
   count.textContent = `${items.length} location${items.length===1?'':'s'} shown`;
@@ -129,7 +139,7 @@ function render() {
     addLink(context,'How to arrange care',state.type==='Primary Care'?'./care.html?type=primary-care':'./care.html?type=therapy');
   }
   context.hidden=!context.childNodes.length;
-  document.querySelector('#print-summary').textContent=[state.type==='All'?'All resource locations':state.type,state.query?`Search: ${state.query}`:'',state.population!=='All'?`Population: ${state.population}`:'',`${items.length} locations`].filter(Boolean).join(' · ');
+  document.querySelector('#print-summary').textContent=[state.type==='All'?'All resource locations':state.type,state.query?`Search: ${state.query}`:'',state.population!=='All'?`Population: ${state.population}`:'',state.sort==='distance'?'Closest to Process · approximate straight-line miles from 21 Factory St; town pins are approximate; Process and Rise Above pinned first':'Alphabetical · Process and Rise Above pinned first',`${items.length} locations`].filter(Boolean).join(' · ');
   if (layer) layer.clearLayers();
   const bounds=[];
   const markers = new Map();
@@ -165,6 +175,9 @@ async function init() {
   setupMap();
   const initialType=new URLSearchParams(window.location.search).get('type');
   if (TYPES.includes(initialType)) state.type=initialType;
+  if(new URLSearchParams(window.location.search).get('sort')==='distance')state.sort='distance';
+  document.querySelector('#map-sort').value=state.sort;
+  document.querySelector('#map-sort').addEventListener('change',event=>{state.sort=event.target.value;const url=new URL(window.location.href);if(state.sort==='distance')url.searchParams.set('sort','distance');else url.searchParams.delete('sort');window.history.replaceState(null,'',url);render();});
   document.querySelector('#print-list').addEventListener('click',()=>window.print());
   const filters=document.querySelector('#map-filters');
   for (const type of TYPES) {

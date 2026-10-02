@@ -1,4 +1,4 @@
-import {parseFeed,loadPublicFeed,resourceCard} from './app.js?v=20261002-dental';
+import {parseFeed,loadPublicFeed,resourceCard,alphabeticalResources} from './app.js?v=20261002-sort';
 
 const GUIDES={
   'primary-care':{
@@ -18,7 +18,7 @@ const GUIDES={
 };
 
 export function guideFor(type) { return GUIDES[type] || GUIDES['primary-care']; }
-export function careResources(resources,category) {return resources.filter(item=>item.category===category || (category==='Primary Care, Dental & Vision' && item.category==='Primary Care')).sort((a,b)=>Number(b.featured)-Number(a.featured)||a.sortOrder-b.sortOrder||a.title.localeCompare(b.title));}
+export function careResources(resources,category) {return resources.filter(item=>item.category===category || (category==='Primary Care, Dental & Vision' && item.category==='Primary Care')).sort(alphabeticalResources);}
 
 async function init() {
   const therapy=new URLSearchParams(location.search).get('type')==='therapy';

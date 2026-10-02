@@ -7,12 +7,12 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description" content="Find New Hampshire treatment, shelters, food pantries, meal sites, recovery housing, and Doorways. View access instructions and print a local resource list.">
   <title>Resource Map | Recovery Resource Hub</title>
-  <link rel="stylesheet" href="./styles.css?v=20261002-dental">
-  <link rel="stylesheet" href="./map.css?v=20261002-dental">
+  <link rel="stylesheet" href="./styles.css?v=20261002-sort">
+  <link rel="stylesheet" href="./map.css?v=20261002-sort">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <script src="./config.js"></script>
   <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script type="module" src="./map.js?v=20261002-dental"></script>
+  <script type="module" src="./map.js?v=20261002-sort"></script>
 </head>
 <body>
   <a class="skip-link" href="#map-results">Skip to locations</a>
@@ -33,6 +33,7 @@
       </div>
       <div class="population-tools"><label for="map-population">Population served <select id="map-population"><option value="All">Everyone</option><option>Male</option><option>Female</option><option>Both</option></select></label><p>Male and Female include providers serving both. “Both” may mean separate homes. Numbered pins contain multiple resources.</p></div>
       <div id="map-context" class="map-context" hidden></div>
+      <div class="population-tools"><label for="map-sort">Sort locations <select id="map-sort"><option value="alphabetical">Alphabetical (A–Z)</option><option value="distance">Closest to Process</option></select></label><p>Process and Rise Above stay first when they match your filters. Distances are approximate straight-line miles from Process at 21 Factory St, Nashua—not driving distances. Town-only pins are approximate.</p></div>
       <div class="map-status"><span id="map-count" aria-live="polite">Loading locations…</span><span id="map-feed-state">Saved resource list</span><button id="print-list" type="button">Print this list</button></div>
       <p id="print-summary" class="print-only"></p>
       <div class="map-layout">

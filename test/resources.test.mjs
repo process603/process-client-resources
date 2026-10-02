@@ -83,10 +83,10 @@ test('the client parser rejects unsafe links and inactive rows', () => {
   assert.equal(categoryList(expanded)[0].name,'Child Care');
 });
 
-test('sorting favors featured entries and marks old details', () => {
+test('sorting is alphabetical and marks old details', () => {
   const base={category:'Housing & Sober Living',sortOrder:10};
-  const [first]=[{...base,featured:false},{...base,featured:true}].sort(sortResources);
-  assert.equal(first.featured,true);
+  const [first]=[{...base,title:'Zebra',featured:true},{...base,title:'Alpha',featured:false}].sort(sortResources);
+  assert.equal(first.title,'Alpha');
   assert.equal(stale(''),true);
   assert.equal(stale('2020-01-01'),true);
   assert.equal(stale(new Date().toISOString().slice(0,10)),false);
