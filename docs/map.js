@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources } from './app.js?v=20261002-sort';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261004-family';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All', sort: 'alphabetical' };
 const PROCESS_ORIGIN={latitude:42.761492,longitude:-71.4665541};
 export function distanceFromProcess(item) {
@@ -20,7 +20,7 @@ export function mappable(resources) {
 export function filterLocations(resources, type, query, selectedPopulation = 'All', sort = 'alphabetical') {
   const term = String(query || '').trim().toLocaleLowerCase();
   return mappable(resources).filter(item =>
-    (type === 'All' || item.mapType === type) &&
+    (type === 'All' || item.mapType === type || (type==='Family Support' && familyResource(item))) &&
     matchesPopulation(item, selectedPopulation) &&
     [item.title,item.category,item.description,item.address].join(' ').toLocaleLowerCase().includes(term)
   ).sort((a,b) => Number(pinnedResource(b))-Number(pinnedResource(a)) ||
@@ -139,6 +139,10 @@ function render() {
     addLink(context,'How to arrange care',state.type==='Primary Care'?'./care.html?type=primary-care':'./care.html?type=therapy');
   }
   context.hidden=!context.childNodes.length;
+  if(state.type==='Family Support') {
+    context.append(element('p','','Family housing, parenting support, and treatment have different eligibility and referral routes. Some pins show a town or public office rather than a residence or visit location. Call before traveling.'));
+    addLink(context,'Family support: where to start','./family.html');context.hidden=false;
+  }
   document.querySelector('#print-summary').textContent=[state.type==='All'?'All resource locations':state.type,state.query?`Search: ${state.query}`:'',state.population!=='All'?`Population: ${state.population}`:'',state.sort==='distance'?'Closest to Process · approximate straight-line miles from 21 Factory St; town pins are approximate; Process and Rise Above pinned first':'Alphabetical · Process and Rise Above pinned first',`${items.length} locations`].filter(Boolean).join(' · ');
   if (layer) layer.clearLayers();
   const bounds=[];

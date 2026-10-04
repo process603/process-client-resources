@@ -14,6 +14,7 @@ const CATEGORIES = [
   { name: 'Employment', icon: '▥', description: 'Jobs & support' },
   { name: 'Recovery Resources', icon: '♡', description: 'Meetings & help' },
   { name: 'Safety & Survivor Support', icon: '◇', description: 'Safety, advocacy & survivor help' },
+  { name: 'Family Support & Reunification', icon: '♡', description: 'Parenting, family housing & DCYF help' },
   { name: 'Food & Financial Assistance', icon: '◒', description: 'Food & daily needs' },
   { name: 'Food Pantries', icon: '◒', description: 'Groceries, meals & hours' }
 ];
@@ -22,7 +23,7 @@ const CATEGORY_GROUPS = [
   {name:'Health & Treatment', categories:['Primary Care, Dental & Vision','Therapy & Counseling','Treatment Programs','Medication Providers']},
   {name:'Benefits & Access', categories:['Benefits & NHEASY','Health Insurance','Medical Transportation','Phone Assistance']},
   {name:'Documents, Work & Legal', categories:['IDs & Documents','Employment','Legal & Court Forms']},
-  {name:'Recovery & Support', categories:['Recovery Resources','Safety & Survivor Support']}
+  {name:'Recovery & Family Support', categories:['Recovery Resources','Family Support & Reunification','Safety & Survivor Support']}
 ];
 function groupedCategories(categories) {
   const groups=CATEGORY_GROUPS.map(group=>({...group,categories:group.categories.map(name=>categories.find(c=>c.name===name)).filter(Boolean)}));
@@ -55,7 +56,7 @@ function normalize(input, allowed = CATEGORIES.map(c => c.name)) {
     url:safeHttpUrl(input.url), phone:text('phone'), howTo:text('howTo'), audience:['All','Men','Women'].includes(input.audience)?input.audience:'All',
     featured:input.featured === true, sortOrder:Number(input.sortOrder) || 999, lastVerified:text('lastVerified'), importantNotes:text('importantNotes'),
     servicesOffered:text('servicesOffered') || 'Not verified', agesServed:text('agesServed') || 'Not verified', insurancePlans:text('insurancePlans') || 'Not verified', intakeAccess:text('intakeAccess') || 'Not verified',
-    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Other'].includes(input.mapType) ? input.mapType : '',
+    mapType:['Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Other'].includes(input.mapType) ? input.mapType : '',
     address:privateLocation ? '' : text('address'), latitude:privateLocation ? null : coordinate(input.latitude,-90,90), longitude:privateLocation ? null : coordinate(input.longitude,-180,180) };
 }
 function population(item) {
@@ -143,20 +144,26 @@ export function pinnedResource(item) {
 export function alphabeticalResources(a,b) {
   return Number(pinnedResource(b))-Number(pinnedResource(a)) || a.title.localeCompare(b.title, 'en', {sensitivity:'base',numeric:true});
 }
+export function familyResource(item) {
+  return item.category==='Family Support & Reunification' || String(item.servicesOffered||'').split(';').some(value=>value.trim().toLowerCase()==='family support');
+}
+export function matchesCategory(item,category) {
+  return !category || item.category===category || (category==='Family Support & Reunification' && familyResource(item));
+}
 function sortResources(a,b) {
   const ac=state.categories.findIndex(c=>c.name===a.category), bc=state.categories.findIndex(c=>c.name===b.category);
   return ac-bc || alphabeticalResources(a,b);
 }
 function render() {
   const q=state.query.toLocaleLowerCase();
-  const items=state.resources.filter(item => (!state.category || item.category===state.category) && matchesPopulation(item,state.audience) && matchesReferral(item,state.referral) && [item.title,item.description,item.category,item.howTo,publicNotes(item),item.address,...REFERRAL_FIELDS.map(([key])=>item[key])].join(' ').toLocaleLowerCase().includes(q)).sort(sortResources);
+  const items=state.resources.filter(item => matchesCategory(item,state.category) && matchesPopulation(item,state.audience) && matchesReferral(item,state.referral) && [item.title,item.description,item.category,item.howTo,publicNotes(item),item.address,...REFERRAL_FIELDS.map(([key])=>item[key])].join(' ').toLocaleLowerCase().includes(q)).sort(state.category==='Family Support & Reunification'?alphabeticalResources:sortResources);
   const preview=!state.category&&!state.query&&!state.showAll&&!Object.values(state.referral).some(Boolean);
   const startingCategories=['Housing & Sober Living','Shelters','Food Pantries','Primary Care, Dental & Vision','Therapy & Counseling','Benefits & NHEASY','Treatment Programs','Recovery Resources','Safety & Survivor Support'];
   const displayed=preview?startingCategories.map(category=>items.find(item=>item.category===category)).filter(Boolean):items;
   $('#resource-list').replaceChildren(...displayed.map(resourceCard));
   $('#browse-all').hidden=!preview;
-  $('#category-guide').hidden=!['Primary Care, Dental & Vision','Therapy & Counseling'].includes(state.category);
-  $('#category-guide').href=state.category==='Primary Care, Dental & Vision'?'./care.html?type=primary-care':'./care.html?type=therapy';
+  $('#category-guide').hidden=!['Primary Care, Dental & Vision','Therapy & Counseling','Family Support & Reunification'].includes(state.category);
+  $('#category-guide').href=state.category==='Family Support & Reunification'?'./family.html':state.category==='Primary Care, Dental & Vision'?'./care.html?type=primary-care':'./care.html?type=therapy';
   $('#result-count').textContent=preview?`${displayed.length} starting points · ${items.length} resources available`:`${items.length} resource${items.length===1?'':'s'}`;
   $('#resources-heading').textContent=state.category || (state.query?'Search results':preview?'Useful starting points':'All resources');
   $('#empty-state').hidden=items.length!==0;
@@ -164,7 +171,7 @@ function render() {
   $('#empty-state p').textContent=state.category&&!state.query?'Ask your case manager for help while this category grows.':'Try another term or return to all topics.';
   for (const button of $('#category-grid').querySelectorAll('button')) button.setAttribute('aria-pressed',String(button.dataset.category===state.category));
   const audience=$('#audience-filters'); audience.replaceChildren();
-  if (['Housing & Sober Living','Treatment Programs','Medication Providers'].includes(state.category)) for (const value of ['All','Male','Female','Both']) {
+  if (['Housing & Sober Living','Treatment Programs','Medication Providers','Family Support & Reunification'].includes(state.category)) for (const value of ['All','Male','Female','Both']) {
     const button=node('button','',value==='All'?'Everyone':value); button.type='button'; button.setAttribute('aria-pressed',String(value===state.audience)); button.addEventListener('click',()=>{state.audience=value;render();}); audience.append(button);
   }
 }
