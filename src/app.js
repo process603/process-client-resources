@@ -12,6 +12,7 @@ const CATEGORIES = [
   { name: 'IDs & Documents', icon: '▣', description: 'Cards & certificates' },
   { name: 'Legal & Court Forms', icon: '§', description: 'Forms & filing steps' },
   { name: 'Employment', icon: '▥', description: 'Jobs & support' },
+  { name: 'Adult Education & GED Prep', icon: '▤', description: 'HiSET / GED, English & learning support' },
   { name: 'Recovery Resources', icon: '♡', description: 'Meetings & help' },
   { name: 'Safety & Survivor Support', icon: '◇', description: 'Safety, advocacy & survivor help' },
   { name: 'Family Support & Reunification', icon: '♡', description: 'Parenting, family housing & DCYF help' },
@@ -22,7 +23,7 @@ const CATEGORY_GROUPS = [
   {name:'Housing & Basic Needs', categories:['Housing & Sober Living','Shelters','Food Pantries','Food & Financial Assistance']},
   {name:'Health & Treatment', categories:['Primary Care, Dental & Vision','Therapy & Counseling','Treatment Programs','Medication Providers']},
   {name:'Benefits & Access', categories:['Benefits & NHEASY','Health Insurance','Medical Transportation','Phone Assistance']},
-  {name:'Documents, Work & Legal', categories:['IDs & Documents','Employment','Legal & Court Forms']},
+  {name:'Education, Work & Documents', categories:['Adult Education & GED Prep','Employment','IDs & Documents','Legal & Court Forms']},
   {name:'Recovery & Family Support', categories:['Recovery Resources','Family Support & Reunification','Safety & Survivor Support']}
 ];
 function groupedCategories(categories) {
@@ -163,6 +164,7 @@ function render() {
   $('#resource-list').replaceChildren(...displayed.map(resourceCard));
   $('#browse-all').hidden=!preview;
   $('#category-guide').hidden=!['Primary Care, Dental & Vision','Therapy & Counseling','Family Support & Reunification'].includes(state.category);
+  $('#education-start').hidden=state.category!=='Adult Education & GED Prep';
   $('#category-guide').href=state.category==='Family Support & Reunification'?'./family.html':state.category==='Primary Care, Dental & Vision'?'./care.html?type=primary-care':'./care.html?type=therapy';
   $('#result-count').textContent=preview?`${displayed.length} starting points · ${items.length} resources available`:`${items.length} resource${items.length===1?'':'s'}`;
   $('#resources-heading').textContent=state.category || (state.query?'Search results':preview?'Useful starting points':'All resources');
