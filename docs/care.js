@@ -1,4 +1,4 @@
-import {parseFeed,loadPublicFeed,resourceCard,alphabeticalResources} from './app.js?v=20261005-education';
+import {parseFeed,loadPublicFeed,resourceCard,alphabeticalResources} from './app.js?v=20261007-feed';
 
 const GUIDES={
   'primary-care':{

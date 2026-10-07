@@ -195,7 +195,7 @@ function renderCategoryButtons() {
   }
 }
 function showAllResources() { state.referral={};document.querySelectorAll('#referral-filters select').forEach(select=>select.value='');state.category='';state.audience='All';state.query='';state.showAll=true;$('#search').value='';render();$('#resources').scrollIntoView({behavior:'smooth'}); }
-function loadPublicFeed(url, timeoutMs=8000) {
+function loadPublicFeed(url, timeoutMs=25000) {
   return new Promise((resolve,reject)=>{
     const callback='__processFeed_'+Math.random().toString(36).slice(2); const script=document.createElement('script'); let finished=false;
     const finish=(error,data)=>{if(finished)return;finished=true;clearTimeout(timer);script.remove();delete window[callback];error?reject(error):resolve(data);};

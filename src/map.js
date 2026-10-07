@@ -1,4 +1,4 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261005-education';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261007-feed';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All', sort: 'alphabetical' };

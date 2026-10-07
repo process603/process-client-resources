@@ -1,4 +1,4 @@
-import {parseFeed,loadPublicFeed,resourceCard,familyResource,alphabeticalResources} from './app.js?v=20261005-education';
+import {parseFeed,loadPublicFeed,resourceCard,familyResource,alphabeticalResources} from './app.js?v=20261007-feed';
 
 export function familySection(item) {
   if(/DCYF information|Legal information|Child safety reporting/i.test(item.servicesOffered||'')) return 'dcyf';
