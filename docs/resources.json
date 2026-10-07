@@ -1,5 +1,28 @@
 [
   {
+    "category": "Medication Providers",
+    "title": "The MindBridge Clinic — Telehealth Psychiatry",
+    "description": "Online psychiatric evaluations, ADHD care, and mental health medication management for patients in New Hampshire. Evening and weekend appointments are offered.",
+    "buttonText": "Services & appointments",
+    "url": "https://tmbclinic.com/",
+    "phone": "603-571-1881",
+    "howTo": "Call 603-571-1881 or select Book an Appointment on the clinic website. Ask for a psychiatric evaluation or medication-management intake. Confirm age eligibility, your exact insurance plan, referral requirements, fees, and the next available visit. Ask how to receive the secure video link and submit records through the clinic's approved process.",
+    "audience": "All",
+    "featured": false,
+    "active": true,
+    "sortOrder": 80,
+    "lastVerified": "2026-10-07",
+    "importantNotes": "Telehealth only per the provider's directory listing; you must be in NH for NH telehealth care. Published office address: 66 Hanover Street, Suite 200, Manchester, NH 03101; not a confirmed in-person appointment site. General inquiries: contact@tmbclinic.com. Confirm current openings and plan coverage before booking. Therapy/counseling referrals are offered; ongoing talk therapy is not confirmed.",
+    "mapType": "Medication",
+    "address": "Telehealth — New Hampshire",
+    "latitude": null,
+    "longitude": null,
+    "servicesOffered": "Psychiatric evaluation; Medication management; ADHD evaluation & treatment; Telehealth",
+    "agesServed": "Not verified",
+    "insurancePlans": "Aetna; Anthem Blue Cross Blue Shield; Cigna; Optum; UnitedHealthcare; Medicare; Medicaid; NH Healthy Families; AmeriHealth Caritas; Harvard Pilgrim; Ambetter; Humana; Tufts Health Plan; TRICARE; Beacon Health Options; Magellan Health; WellSense; Molina Healthcare",
+    "intakeAccess": "Call for intake"
+  },
+  {
     "category": "Housing & Sober Living",
     "title": "Rise Above Sober Living",
     "description": "Apply for Rise Above sober living with support from your case manager.",
