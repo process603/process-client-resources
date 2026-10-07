@@ -1,5 +1,28 @@
 [
   {
+    "category": "Housing & Sober Living",
+    "title": "Stay Committed Sober Living — Somersworth",
+    "description": "Men's sober living in Somersworth, Strafford County. The provider advertises MAT-friendly housing and describes the home as not a 12-Step program.",
+    "buttonText": "Program & application",
+    "url": "https://www.staycommitted.llc/",
+    "phone": "978-818-9997",
+    "howTo": "Call or text Ricky or Char at 978-818-9997 to ask about openings and the application process. Confirm the current weekly rate, move-in costs, house rules, and your specific medication arrangements before applying. Request the residence address directly before traveling.",
+    "audience": "Men",
+    "featured": false,
+    "active": true,
+    "sortOrder": 610,
+    "lastVerified": "2026-10-07",
+    "importantNotes": "Advertised rate: $250 per week in the shared October 2026 post; confirm current pricing and any deposits or additional fees. MAT-friendly does not mean the home provides prescribing or medical treatment. Approximate city/town pin only; not the property location.",
+    "mapType": "Sober Living",
+    "address": "Somersworth, NH",
+    "latitude": 43.253476,
+    "longitude": -70.887944,
+    "servicesOffered": "Housing & sober living; MAT-friendly housing",
+    "agesServed": "Not verified",
+    "insurancePlans": "Not verified",
+    "intakeAccess": "Call for intake"
+  },
+  {
     "category": "Medication Providers",
     "title": "The MindBridge Clinic — Telehealth Psychiatry",
     "description": "Online psychiatric evaluations, ADHD care, and mental health medication management for patients in New Hampshire. Evening and weekend appointments are offered.",
