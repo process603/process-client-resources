@@ -3887,5 +3887,28 @@
     "servicesOffered": "Adult education; HiSET preparation; GED preparation; Adult diploma; English language classes; Workforce training",
     "howTo": "1. Open the directory and choose your city or region. 2. Filter by your goal: ABE for basic skills, HSE for equivalency preparation, ADP for diploma completion, or ESL for English. 3. Contact the listed center or use its Apply Now link. 4. Ask about eligibility, placement testing, schedule, fees, and whether HiSET, GED, or diploma classes fit your goal.",
     "importantNotes": "Programs and enrollment requirements vary by center. Tell the provider if you have prior high-school credits or need online classes, testing accommodations, or help with transportation."
+  },
+  {
+    "category": "Medical Transportation",
+    "title": "Recovery Ride — NRPC / Dial Donna",
+    "description": "Free transportation assistance for Greater Nashua residents currently in treatment for opioid use disorder. Helps with recovery meetings, court dates, and medical or essential appointments.",
+    "buttonText": "Eligibility & ride details",
+    "url": "https://nashuarpc.org/planning_services/opioid_abatement_community_grant_program.php",
+    "phone": "603-417-6571",
+    "howTo": "Call Donna M. Marceau at 603-417-6571 or email donnam@nashuarpc.org. Ask about Recovery Ride eligibility, available funding, and how to arrange your trip. Confirm scheduling notice and approval before booking or paying for a ride.",
+    "audience": "All",
+    "featured": false,
+    "active": true,
+    "sortOrder": 110,
+    "lastVerified": "2026-10-16",
+    "importantNotes": "Serves Amherst, Brookline, Hollis, Hudson, Litchfield, Lyndeborough, Mason, Merrimack, Milford, Mont Vernon, Nashua, Pelham, and Wilton. Funding can cover bus passes and Uber, Lyft, or taxi rides. Contact Donna to confirm current availability.",
+    "mapType": "",
+    "address": "Greater Nashua, NH",
+    "latitude": null,
+    "longitude": null,
+    "servicesOffered": "Medical transportation; Recovery transportation; Court transportation; Bus passes",
+    "agesServed": "Not verified",
+    "insurancePlans": "Not verified",
+    "intakeAccess": "Call for intake"
   }
 ]
