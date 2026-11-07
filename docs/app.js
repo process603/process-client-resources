@@ -1,4 +1,5 @@
 const CATEGORIES = [
+  { name: 'Spanish & Latino Resources', icon: '◎', description: 'Recursos en español · community, care & legal support' },
   { name: 'Housing & Sober Living', icon: '⌂', description: 'Homes & applications' },
   { name: 'Shelters', icon: '⌂', description: 'Shelter & housing access' },
   { name: 'Treatment Programs', icon: '✳', description: 'Substance use treatment across New Hampshire' },
@@ -24,7 +25,7 @@ const CATEGORY_GROUPS = [
   {name:'Health & Treatment', categories:['Primary Care, Dental & Vision','Therapy & Counseling','Treatment Programs','Medication Providers']},
   {name:'Benefits & Access', categories:['Benefits & NHEASY','Health Insurance','Medical Transportation','Phone Assistance']},
   {name:'Education, Work & Documents', categories:['Adult Education & GED Prep','Employment','IDs & Documents','Legal & Court Forms']},
-  {name:'Recovery & Family Support', categories:['Recovery Resources','Family Support & Reunification','Safety & Survivor Support']}
+  {name:'Recovery & Family Support', categories:['Recovery Resources','Family Support & Reunification','Safety & Survivor Support','Spanish & Latino Resources']}
 ];
 function groupedCategories(categories) {
   const groups=CATEGORY_GROUPS.map(group=>({...group,categories:group.categories.map(name=>categories.find(c=>c.name===name)).filter(Boolean)}));
@@ -163,6 +164,7 @@ function render() {
   const displayed=preview?startingCategories.map(category=>items.find(item=>item.category===category)).filter(Boolean):items;
   $('#resource-list').replaceChildren(...displayed.map(resourceCard));
   $('#browse-all').hidden=!preview;
+  $('#language-start').hidden=state.category!=='Spanish & Latino Resources';
   $('#category-guide').hidden=!['Primary Care, Dental & Vision','Therapy & Counseling','Family Support & Reunification'].includes(state.category);
   $('#education-start').hidden=state.category!=='Adult Education & GED Prep';
   $('#category-guide').href=state.category==='Family Support & Reunification'?'./family.html':state.category==='Primary Care, Dental & Vision'?'./care.html?type=primary-care':'./care.html?type=therapy';

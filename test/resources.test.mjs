@@ -22,8 +22,8 @@ test('care guides and map filters keep therapy, primary care, and medication dis
   const resources=parseFeed({resources:snapshot});
   assert.equal(careResources(resources,'Primary Care, Dental & Vision').length,13);
   assert.equal(careResources(resources,'Therapy & Counseling').length,5);
-  assert.equal(filterLocations(resources,'Primary Care','').length,2);
-  assert.equal(filterLocations(resources,'Therapy','').length,2);
+  assert.equal(filterLocations(resources,'Primary Care','').filter(r=>r.category!=='Spanish & Latino Resources').length,2);
+  assert.equal(filterLocations(resources,'Therapy','').filter(r=>r.category!=='Spanish & Latino Resources').length,2);
   assert.equal(guideFor('therapy').category,'Therapy & Counseling');
   assert.equal(guideFor('invalid').category,'Primary Care, Dental & Vision');
   assert.ok(careResources(resources,'Therapy & Counseling').some(r=>r.title.includes('Greater Nashua')&&r.latitude===null));
@@ -144,4 +144,18 @@ test('same-city providers stay accessible in a grouped marker after filtering', 
   const selected=filterLocations(items,'Sober Living','Nashua','Female');
   assert.deepEqual(selected.map(x=>x.title),['Both homes','Female home']);
   assert.equal(groupLocations(selected)[0].length,2);
+});
+
+test('Spanish and Latino section keeps statewide support discoverable without inventing map locations', () => {
+ const resources=parseFeed({resources:JSON.parse(readFileSync(new URL('../src/resources.json',import.meta.url),'utf8'))});
+ const entries=resources.filter(r=>r.category==='Spanish & Latino Resources');
+ assert.equal(entries.length,19);
+ const pins=filterLocations(resources,'Spanish & Latino Resources','');
+ assert.equal(pins.length,16);
+ assert.ok(pins.every(r=>r.category==='Spanish & Latino Resources'));
+ assert.ok(entries.some(r=>r.title.startsWith('NH Domestic')&&!mappable([r]).length));
+ assert.ok(entries.some(r=>r.title.startsWith('Welcoming')&&!mappable([r]).length));
+ assert.ok(pins.some(r=>r.title.startsWith('Harbor Care')&&r.mapType==='Primary Care'));
+ assert.ok(pins.some(r=>r.title.startsWith('Emoti')&&r.mapType==='Therapy'));
+ assert.equal(filterLocations(resources,'Spanish & Latino Resources','Nashua').some(r=>r.title.startsWith('Emoti')),false);
 });

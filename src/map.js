@@ -1,6 +1,6 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261007-feed';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261106-latino';
 
-const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Other'];
+const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Spanish & Latino Resources','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All', sort: 'alphabetical' };
 const PROCESS_ORIGIN={latitude:42.761492,longitude:-71.4665541};
 export function distanceFromProcess(item) {
@@ -20,7 +20,7 @@ export function mappable(resources) {
 export function filterLocations(resources, type, query, selectedPopulation = 'All', sort = 'alphabetical') {
   const term = String(query || '').trim().toLocaleLowerCase();
   return mappable(resources).filter(item =>
-    (type === 'All' || item.mapType === type || (type==='Family Support' && familyResource(item))) &&
+    (type === 'All' || item.mapType === type || (type==='Spanish & Latino Resources' && item.category==='Spanish & Latino Resources') || (type==='Family Support' && familyResource(item))) &&
     matchesPopulation(item, selectedPopulation) &&
     [item.title,item.category,item.description,item.address].join(' ').toLocaleLowerCase().includes(term)
   ).sort((a,b) => Number(pinnedResource(b))-Number(pinnedResource(a)) ||
@@ -126,7 +126,10 @@ function render() {
   count.textContent = `${items.length} location${items.length===1?'':'s'} shown`;
   const context=document.querySelector('#map-context');
   context.replaceChildren();
-  if (state.type==='Shelters') {
+  if (state.type==='Spanish & Latino Resources') {
+    context.append(element('p','','Recursos en español · Pins show public offices and care locations; some are approximate town pins. Statewide directories and confidential shelter locations appear in the resource list without pins. Request Spanish-speaking staff or an interpreter when contacting a provider.'));
+    addLink(context,'Browse the full Spanish & Latino section','./?category=Spanish%20%26%20Latino%20Resources');
+  } else if (state.type==='Shelters') {
     context.append(element('p','','Call before traveling: a pin does not mean a bed is available. Some pins mark intake or resource offices; check the access instructions.'));
     addLink(context,'Call 211 for shelter referrals','tel:211');
   } else if (state.type==='Food Pantries') {
