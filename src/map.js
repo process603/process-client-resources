@@ -1,4 +1,4 @@
-import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261106-latino';
+import { parseFeed, safePhone, loadPublicFeed, populationLabel, matchesPopulation, approximateLocation, publicNotes, handoutButton, pinnedResource, alphabeticalResources, familyResource } from './app.js?v=20261107-language';
 
 const TYPES = ['All','Programs','Sober Living','Medication','Doorways','Shelters','Food Pantries','Primary Care','Dental','Therapy','Family Support','Spanish & Latino Resources','Other'];
 const state = { resources: [], type: 'All', query: '', population: 'All', sort: 'alphabetical' };
