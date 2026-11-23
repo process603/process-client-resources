@@ -4470,5 +4470,28 @@
     "agesServed": "Not verified",
     "insurancePlans": "Not verified",
     "intakeAccess": "Self-referral"
+  },
+  {
+    "category": "Housing & Sober Living",
+    "title": "Stoodley Sober House — Claremont",
+    "description": "Men’s sober living in Claremont, NH, operated by Enomay as part of the Vanderburgh Sober Living network.",
+    "buttonText": "View house details",
+    "url": "https://www.vanderburghhouse.com/home/stoodley-sober-house-sober-living-men-claremont-new-hampshire/",
+    "phone": "603-477-4414",
+    "howTo": "Call Jim Doherty at 603-477-4414 for a phone screening or referral. Confirm openings, the total move-in cost, and whether your prescribed medications can be accommodated. Ask for the address after screening.",
+    "audience": "Men",
+    "featured": false,
+    "active": true,
+    "sortOrder": 820,
+    "lastVerified": "2026-11-23",
+    "importantNotes": "The operator’s Nov. 22, 2026 referral email quoted $205/week for a shared room or $225/week for a single, including utilities, plus a one-time $200 admission fee. Confirm rates before paying; the website shows different figures. The operator reports accepting prescribed medications and says recertification is in progress. Approximate city/town pin only; not the property location.",
+    "mapType": "Sober Living",
+    "address": "Claremont, NH",
+    "latitude": 43.38647,
+    "longitude": -72.334496,
+    "servicesOffered": "Housing & sober living",
+    "agesServed": "Not verified",
+    "insurancePlans": "Not verified",
+    "intakeAccess": "Call for intake"
   }
 ]
